@@ -1,24 +1,19 @@
 ---
 layout: page
-title: About the Theme
+title: About the Me
 tags: [about, Jekyll, theme, moon]
-date: 2016-03-21
+date: 2019-03-05
 comments: false
 ---
     
-<center><a href="http://taylantatli.github.io/Moon"><b>Moon</b></a> is a minimal, one column jekyll theme.</center>
+<center><a href="https://ixtears23.github.io/"><b>개발자 블로그</b></a></center>
 
-## Features
-* Minimal, you can focus on your content
-* Responsive
-* Disqus integration
-* Syntax highlighting
-* Optional post image
-* Social icons
-* Page for sharing projects
-* Optional background image
-* Simple navigation menu
-* MathJax support
+## 소개
+* 4년차 개발자 입니다.
+* Spring을 좋아합니다.
+* 매일 성장하는 중입니다.
+ 
+
 
 ## Preview
 
