@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-list
 title: "진심?"
 date: 2012-05-22
 excerpt: "A ton of text to test readability."
