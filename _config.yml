@@ -74,3 +74,19 @@ jekyll-mentions:
 
 # Exclude list
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
+
+collections:
+    dev:
+        output: true
+        java:
+            output: true
+            springframework:
+                output: true
+            springboot:
+                output: true
+            pattern:
+                output: true
+        javascript:
+            output: true
+            pattern:
+                output: true
