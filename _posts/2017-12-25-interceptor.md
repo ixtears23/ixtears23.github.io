@@ -72,14 +72,15 @@ public class WebRequest implements WebRequestInterceptor {
 ~~~
 
 ### Interface **HandlerInterceptor**
-`**preHandle**`  
+
+- **preHandle**  
 
 핸들러의 실행을 차단하십시오.   
 HandlerAdapter가 실제로 핸들러를 호출 한 후에 호출되었지만 DispatcherServlet이 뷰를 렌더링하기 전에 호출됩니다.  
 이 방법을 사용하면 각 인터셉터는 실행 체인을 중단하고 일반적으로 HTTP 오류를 보내거나 사용자 지정 응답을 작성하도록 결정할 수 있습니다.  
 {: .notice}  
 
-`**postHandle**`  
+- **postHandle**  
 
 핸들러의 실행을 차단하십시오.  
 HandlerAdapter가 실제로 핸들러를 호출 한 후에 호출되었지만 DispatcherServlet이 뷰를 렌더링하기 전에 호출됩니다.  
@@ -87,7 +88,7 @@ HandlerAdapter가 실제로 핸들러를 호출 한 후에 호출되었지만 Di
 이 방법을 사용하면 각 인터셉터는 실행 체인을 역순으로 적용하여 실행을 사후 처리 할 수 있습니다.  
 {: .notice}  
 
-`**afterCompletion****`  
+- **afterCompletion**  
 
 요청 처리 완료 후, 즉 뷰 렌더링 후 콜백.  
 핸들러 실행 결과에 대해 호출되므로 적절한 리소스 정리가 가능합니다.  
@@ -106,11 +107,13 @@ xml에 Bean객체를 등록할 때 class속성에 InterCeptor를 구현한 클�
 ---
 ### 이하 JAVA API
 ### `AbstractHandlerMapping` 클래스
-* `setInterceptors`
-> 지원되는 인터셉터 유형은  
-> `HandlerInterceptor`, `WebRequestInterceptor` 및 `MappedInterceptor`입니다.  
-> 매핑 된 인터셉터는 경로 패턴과 일치하는 요청 URL에만 적용됩니다.  
-> 매핑 된 인터셉터 빈은 초기화 중 유형(type)별로도 감지됩니다.  
+- **setInterceptors**  
+
+지원되는 인터셉터 유형은  
+`HandlerInterceptor`, `WebRequestInterceptor` 및 `MappedInterceptor`입니다.  
+매핑 된 인터셉터는 경로 패턴과 일치하는 요청 URL에만 적용됩니다.  
+매핑 된 인터셉터 빈은 초기화 중 유형(type)별로도 감지됩니다.  
+{: .notice}  
 
 - HandlerInterceptor  
 - WebRequestInterceptor  
