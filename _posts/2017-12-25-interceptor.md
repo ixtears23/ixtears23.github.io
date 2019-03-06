@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Hoisting"
+title: "interceptor"
 date: 2019-03-06
-excerpt: "hoisting은 모든 선언을 scope의 상단으로 끌어 올립니다."
-tags: [javascript]
+excerpt: "springframework interceptor"
+tags: [springframework]
 comments: true
 ---
 
