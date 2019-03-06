@@ -4,6 +4,7 @@ title: "interceptor"
 date: 2017-12-25
 excerpt: "springframework interceptor"
 tags: [springframework, interceptor]
+name: "dev"
 comments: true
 ---
 
@@ -14,14 +15,14 @@ comments: true
 ## 순서
  1. **xml 설정**
  2. **InterCeptor interface 구현**
- 
+
 
 #### 1. xml 설정
 HandlerMapping 클래스 Bean  참조  
 HandlerMapping클래스 Bean의 property에 **interceptors** 이름으로 interceptor를 구현한 클래스를 참조 한다.  
 InterCeptor Bean 객체의 class 속성값은 InterCeptor를 구현한 클래스의 경로부터 이름까지 적어준다.  
 {: .notice}
- 
+
 ##### InterCeptor를 여러개 등록 `<list>`를 사용해서 등록
  ~~~xml
 <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
@@ -31,8 +32,8 @@ InterCeptor Bean 객체의 class 속성값은 InterCeptor를 구현한 클래스
 		</list>		
 	</property>
 </bean>
- 
- 
+
+
 <bean id="webRequestInterCeptor" class="spring.learning.config.java.interCeptors.WebRequest"/>
 <bean id="handlerInterCeptor" class="spring.learning.config.java.interCeptors.Handler"/>
 ~~~
@@ -43,10 +44,10 @@ InterCeptor Bean 객체의 class 속성값은 InterCeptor를 구현한 클래스
 <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
 	<property name="interceptors" ref="webRequestInterCeptor"/>
 </bean>
- 
+
 <bean id="webRequestInterCeptor" class="spring.learning.config.java.interCeptors.WebRequest"/>
 ~~~
-  
+
 #### 2. InterCeptor interface 구현
 ~~~java
 public class WebRequest implements WebRequestInterceptor {
@@ -118,5 +119,3 @@ xml에 Bean객체를 등록할 때 class속성에 InterCeptor를 구현한 클�
 - HandlerInterceptor  
 - WebRequestInterceptor  
 - MappedInterceptor  
-
-
