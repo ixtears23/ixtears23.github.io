@@ -4,7 +4,6 @@ title: "interceptor"
 date: 2017-12-25
 excerpt: "springframework interceptor"
 tags: [springframework, interceptor]
-name: "dev"
 comments: true
 ---
 
