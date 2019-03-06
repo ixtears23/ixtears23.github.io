@@ -79,13 +79,7 @@ exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.j
 #  Collections
 # -----------------------------------------------------------------------------
 collections:
-    devs:
+    tags:
         output: true
-        permalink:       /dev/:name/
-        javascript:
-            output: true
-            permalink:       /javascript/:name/
-        java:
-            output: true
-            permalink:       /java/:name/
+        permalink:       /tags/:path/
 
