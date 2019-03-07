@@ -11,18 +11,16 @@ comments: true
 # DispatcherServlet.md
 [Spring WebFlux와 동일](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web-reactive.html#webflux-dispatcher-handler)
 
-많은 다른 웹 프레임 워크와 마찬가지로 Spring MVC는 프런트 컨트롤러 패턴을 중심으로 설계되었으며,  
-DispatcherServlet 인 중앙 서블릿은 요청 처리를 위한 공유 알고리즘을 제공하고  
-실제 작업은 구성 가능한 위임 구성 요소로 수행합니다.  
+많은 다른 웹 프레임 워크와 마찬가지로 Spring MVC는 프런트 컨트롤러 패턴을 중심으로 설계되었으며,
+DispatcherServlet 인 중앙 서블릿은 요청 처리를 위한 공유 알고리즘을 제공하고 실제 작업은 구성 가능한 위임 구성 요소로 수행합니다.  
 이 모델은 유연하고 다양한 워크 플로를 지원합니다.  
 
 
-DispatcherServlet은 모든 서블릿과 마찬가지로 Java 구성 또는 web.xml을 사용하여  
-서블릿 사양에 따라 선언하고 매핑해야합니다.  
+DispatcherServlet은 모든 서블릿과 마찬가지로 Java 구성 또는 web.xml을 사용하여 서블릿 사양에 따라 선언하고 매핑해야합니다.  
 
-DispatcherServlet은 Spring 구성을 사용하여  
-[요청 매핑(request mapping), 뷰 분석(view resolution), 예외 처리(exception handling) 등](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-servlet-special-bean-types)  
-에 필요한 위임 구성 요소를 검색합니다.  
+
+DispatcherServlet은 Spring 구성을 사용하여
+[요청 매핑(request mapping), 뷰 분석(view resolution), 예외 처리(exception handling) 등](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-servlet-special-bean-types) 에 필요한 위임 구성 요소를 검색합니다.  
 
 
 다음은 DispatcherServlet을 등록하고 초기화하는 Java 구성의 예입니다.  
@@ -48,9 +46,9 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
 }
 ~~~
 ---
-> ServletContext API를 직접 사용하는 것 외에도  
-> AbstractAnnotationConfigDispatcherServletInitializer를 확장하고  
-> 특정 메서드를 재정의 할 수 있습니다 ([컨텍스트 계층 구조](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-servlet-context-hierarchy)의 예제 참조).  
+> ServletContext API를 직접 사용하는 것 외에도
+AbstractAnnotationConfigDispatcherServletInitializer를 확장하고 특정 메서드를 재정의 할 수 있습니다.
+ ([컨텍스트 계층 구조](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-servlet-context-hierarchy)의 예제 참조).  
 
 ---
 
@@ -86,22 +84,21 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
 ~~~
 
 ---
-> 스프링 부트는 다른 초기화 순서를 따른다.  
-> SpringBoot는 Servlet 컨테이너의 라이프 사이클에 연결하는 대신  
-> Spring 구성을 사용하여 자체 및 내장 된 Servlet 컨테이너를 부트 스트랩합니다.  
+> 스프링 부트는 다른 초기화 순서를 따릅니다.  
+> SpringBoot는 Servlet 컨테이너의 라이프 사이클에 연결하는 대신  Spring 구성을 사용하여 자체 및 내장 된 Servlet 컨테이너를 부트 스트랩합니다.  
 > 필터 및 서블릿 선언은 Spring 구성에서 감지되어 서블릿 컨테이너에 등록됩니다.  
 > 자세한 내용은 [Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-embedded-container) 문서를 확인하십시오.  
+
 ---
 
 ## 1.2.1. Context Hierarchy
 DispatcherServlet은 자신의 구성을 위해 일반 ApplicationContext의 확장 인 WebApplicationContext를 기대합니다.  
 WebApplicationContext는 연관되어있는 ServletContext와 Servlet에 대한 링크를 가지고 있습니다.  
-또한 ServletContext에 바인딩되어 있으므로 응용 프로그램에서  
-RequestContextUtils의 정적 메서드를 사용하여 WebApplicationContext에 액세스해야하는 경우이를 조회 할 수 있습니다.  
+또한 ServletContext에 바인딩되어 있으므로 응용 프로그램에서 RequestContextUtils의 정적 메서드를 사용하여
+WebApplicationContext에 액세스해야하는 경우이를 조회 할 수 있습니다.  
 
 * 단일 WebApplicationContext를 갖는 많은 응용 프로그램은 간단하고 충분(sufficient)합니다.  
-* 하나의 루트 WebApplicationContext가  
-여러 DispatcherServlet (또는 다른 Servlet) 인스턴스에서 공유되고  
+* 하나의 루트 WebApplicationContext가 여러 DispatcherServlet (또는 다른 Servlet) 인스턴스에서 공유되고
 각각 자체 Child WebApplicationContext 구성을 갖는 컨텍스트 계층 구조를 가질 수도 있습니다.  
 컨텍스트 계층 구조 기능에 대한 자세한 내용은 [ApplicationContext의 추가 기능](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#context-introduction)을 참조하십시오.  
 
@@ -131,10 +128,12 @@ public class MyWebAppInitializer extends AbstractAnnotationConfigDispatcherServl
     }
 }
 ~~~
+
 ---
-> 응용 프로그램 컨텍스트 계층 구조가 필요하지 않은 경우  
-> 응용 프로그램은 getRervConfigClasses ()를 통해 모든 구성을 반환하고  
-> getServletConfigClasses ()에서 null을 반환 할 수 있습니다.  
+
+> 응용 프로그램 컨텍스트 계층 구조가 필요하지 않은 경우 응용 프로그램은 getRervConfigClasses ()를 통해 모든 구성을 반환하고
+getServletConfigClasses ()에서 null을 반환 할 수 있습니다.  
+
 ---
 
 위의 java config와 동일기능을 하는 web.xml
@@ -162,7 +161,7 @@ public class MyWebAppInitializer extends AbstractAnnotationConfigDispatcherServl
 
     <servlet-mapping>
         <servlet-name>app1</servlet-name>
-        <url-pattern>/app1/*</url-pattern>
+        <url-pattern>/app1/`*</url-pattern>
     </servlet-mapping>
 
 </web-app>
@@ -177,29 +176,32 @@ DispatcherServlet은 요청을 처리하고 적절한 응답을 렌더링하기 
 **1. HandlerMapping**  
 사전 처리 및 사후 처리를위한 [인터셉터](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-handlermapping-interceptor) 목록과 함께 요청을 처리기에 매핑합니다.  
 매핑은 HandlerMapping 구현에 따라 세부 사항이 달라지는 일부 기준을 기반으로합니다.  
-두 가지 주요 HandlerMapping 구현은 @RequestMapping 주석이있는  
-메소드를 지원하는 RequestMappingHandlerMapping과  
+두 가지 주요 HandlerMapping 구현은 @RequestMapping 주석이있는 메소드를 지원하는 RequestMappingHandlerMapping과
 URI 경로 패턴의 핸들러를 명시 적으로 등록한 SimpleUrlHandlerMapping입니다.  
+
 **2. HandlerAdapter**  
-DispatcherServlet이 핸들러가 실제로 호출되는 방법에 관계없이  
-요청에 매핑 된 핸들러를 호출 할 수있게 도와줍니다.  
+DispatcherServlet이 핸들러가 실제로 호출되는 방법에 관계없이 요청에 매핑 된 핸들러를 호출 할 수있게 도와줍니다.  
 예를 들어, anotation이 달린 컨트롤러를 호출하려면 anotation을 해석해야합니다.  
 HandlerAdapter의 주요 목적은 DispatcherServlet을 그러한 세부 사항으로부터 보호하는 것입니다.  
+
 **[3. HandlerExceptionResolver](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-exceptionhandlers)**  
 핸들러 또는 HTML 오류 뷰 또는 기타로 맵핑 할 수있는 예외를 해결하기위한 전략.  
 [예외 해결](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-exceptionhandlers)을 참조하십시오.  
+
 **4. ViewResolver**  
 Handler에서 반환 된 논리적 String 기반 뷰 이름을 실제 View로 해석하여 응답에 렌더링합니다.  
 [View Resolution](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-viewresolver), [View Technologies](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-view) 를 참고 하십시오.  
+
 **[5. LocaleResolver](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-localeresolver), [LocaleContextResolver](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-timezone)**  
 국제화 된 뷰를 제공 할 수 있도록 클라이언트가 사용하는 로케일 가능한 시간대를 해결합니다.  
 See [Locale](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-localeresolver).  
+
 **[6. ThemeResolver](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-themeresolver)**  
 예를 들어, 개인화 된 레이아웃을 제공하기 위해 Web 응용 프로그램에서 사용할 수있는 테마를 해결합니다.  
 일부 멀티 파트 구문 분석 라이브러리의 도움으로 여러 부분 요청 (예 : 브라우저 폼 파일 업로드)을 구문 분석하기위한 추상화입니다.  
+
 **[7. FlashMapManager](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-flash-attributes)**  
-일반적으로 리디렉션을 통해 한 요청에서 다른 요청으로  
-속성을 전달하는 데 사용할 수있는 "입력"및 "출력" FlashMap을 저장하고 검색합니다.  
+일반적으로 리디렉션을 통해 한 요청에서 다른 요청으로 속성을 전달하는 데 사용할 수있는 "입력"및 "출력" FlashMap을 저장하고 검색합니다.  
 
 ## 1.2.3. Web MVC Config
 응용 프로그램은 요청을 처리하는 데 필요한 [mvc-special-bean-types]에 나열된 인프라 bean을 선언 할 수 있습니다.  
@@ -210,12 +212,13 @@ DispatcherServlet은 각 특수 bean에 대한 WebApplicationContext를 확인�
 필요한 bean을 Java 또는 XML로 선언하고 더 높은 레벨의 구성 콜백 API를 제공하여이를 사용자 정의합니다.  
 
 ---
+
 > 스프링 부트는 MVC Java 구성을 사용하여 스프링 MVC를 구성하고 많은 추가 옵션을 제공합니다.  
+
 ---
 
 ## 1.2.4. Servlet Config
-Servlet 3.0+ 환경에서는 Servlet 컨테이너를 프로그래밍 방식으로 구성할 수 있고  
-web.xml 파일과 함께 구성 할 수도 있습니다.  
+Servlet 3.0+ 환경에서는 Servlet 컨테이너를 프로그래밍 방식으로 구성할 수 있고 web.xml 파일과 함께 구성 할 수도 있습니다.  
 다음은 DispatcherServlet을 등록하는 예제입니다.  
 ~~~java
 import org.springframework.web.WebApplicationInitializer;
@@ -233,11 +236,10 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
     }
 }
 ~~~
-**WebApplicationInitializer**는 Spring MVC가 제공하는 인터페이스로 **자동으로 감지**되고  
-**Servlet 3 컨테이너를 초기화**하는 데 사용됩니다.  
+**WebApplicationInitializer**는 Spring MVC가 제공하는 인터페이스로 **자동으로 감지**되고 **Servlet 3 컨테이너를 초기화**하는 데 사용됩니다.  
 
-**AbstractDispatcherServletInitializer**라는 WebApplicationInitializer의 추상 기본 클래스 구현은  
-**서블릿 매핑**과 **DispatcherServlet 구성의 위치를 지정하는 메소드를 간단히 재정의** 하여  
+**AbstractDispatcherServletInitializer**라는 WebApplicationInitializer의 추상 기본 클래스 구현은
+**서블릿 매핑**과 **DispatcherServlet 구성의 위치를 지정하는 메소드를 간단히 재정의** 하여
 **DispatcherServlet을 등록하는 것을 더욱 쉽게 만듭니다.**  
 
 Java 기반 Spring 구성을 사용하는 응용 프로그램에 권장됩니다. 아래 소스참고
@@ -260,6 +262,7 @@ public class MyWebAppInitializer extends AbstractAnnotationConfigDispatcherServl
     }
 }
 ~~~
+
 XML 기반 Spring 구성을 사용하는 경우 AbstractDispatcherServletInitializer에서 직접 확장해야합니다.  
 ~~~java
 public class MyWebAppInitializer extends AbstractDispatcherServletInitializer {
@@ -282,7 +285,7 @@ public class MyWebAppInitializer extends AbstractDispatcherServletInitializer {
     }
 }
 ~~~
-**AbstractDispatcherServletInitializer**는 **Filter 인스턴스를 추가**하고  
+**AbstractDispatcherServletInitializer**는 **Filter 인스턴스를 추가**하고
 **DispatcherServlet에 자동 매핑**되도록하는 편리한 방법을 제공합니다.  
 ~~~java
 public class MyWebAppInitializer extends AbstractDispatcherServletInitializer {
@@ -298,11 +301,11 @@ public class MyWebAppInitializer extends AbstractDispatcherServletInitializer {
 ~~~
 
 각 필터는 구체적인 유형을 기반으로 기본 이름으로 추가되고 자동으로 DispatcherServlet에 매핑됩니다.  
-isAsyncSupported protected 메소드는 DispatcherServlet 및 이 클래스에 매핑 된  
+isAsyncSupported protected 메소드는 DispatcherServlet 및 이 클래스에 매핑 된
 모든 필터에서 비동기 지원을 활성화하는 단일 위치를 제공합니다.  
 기본적으로이 플래그는 true로 설정됩니다.  
 
-마지막으로, DispatcherServlet 자체를 추가로 사용자 정의해야하는 경우  
+마지막으로, DispatcherServlet 자체를 추가로 사용자 정의해야하는 경우
 createDispatcherServlet 메소드를 대체 할 수 있습니다.  
 
 ## 1.2.5. Processing
