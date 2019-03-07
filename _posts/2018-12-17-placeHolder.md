@@ -17,7 +17,7 @@ comments: true
 **`TOMCAT`에서 설정한다.**  
 
 **톰캣 서버 탭에서 톰캣 서버를 더블클릭한다.**  
-<figure>
+<figure style="text-aling: left;">
 	<a href="https://github.com/ixtears23/docs/blob/master/spring/img/01.png?raw=true"><img src="https://github.com/ixtears23/docs/blob/master/spring/img/01.png?raw=true"></a>
 </figure>
 
