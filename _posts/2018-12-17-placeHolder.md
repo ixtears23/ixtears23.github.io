@@ -23,7 +23,7 @@ comments: true
 
 **Open launch configuration 을 클릭한다.**  
 <figure>
-	<a href="https://github.com/ixtears23/docs/blob/master/spring/img/02.PNG?raw=true"><img src="https://github.com/ixtears23/docs/blob/master/spring/img/03.PNG?raw=true"></a>
+	<a href="https://github.com/ixtears23/docs/blob/master/spring/img/02.PNG?raw=true"><img src="https://github.com/ixtears23/docs/blob/master/spring/img/02.PNG?raw=true"></a>
 </figure>
 
 **아래 창이 뜬다.**  
