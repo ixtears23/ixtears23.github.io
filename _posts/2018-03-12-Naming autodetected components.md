@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "자동 감지 된 구성 요소 이름 지정"
+title: "BeanNameGenerator - Bean naming"
 date: 2018-03-12
 excerpt: "-"
 tags: [springframework]
@@ -53,6 +53,6 @@ public class AppConfig {
 </beans>
 ~~~
 
-일반적으로 다른 구성 요소가 명시 적으로 참조를 만들 때마다 
+일반적으로 다른 구성 요소가 명시 적으로 참조를 만들 때마다
 **어노테이션과 함께 이름을 지정**하는 것이 좋습니다.  
 반면, **자동 생성 된 이름**은 **컨테이너가 wiring을 담당 할 때마다 적절**합니다.
