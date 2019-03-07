@@ -21,25 +21,25 @@ comments: true
 자바에서 기본적으로 제공하는 애너테이션  
 {: .notice}
 
- - @Override
- - @Deprecated
- - @SuppressWarnings
- - @SafeVarargs
- - @FunctionalInterface
- - @Native
+ - `@Override`
+ - `@Deprecated`
+ - `@SuppressWarnings`
+ - `@SafeVarargs`
+ - `@FunctionalInterface`
+ - `@Native`
 
 ### 표준 애너테이션 중 메타애너테이션
 
 애너테이션을 정의하는데 사용되는 애너테이션
 {: .notice}
 
- - @Target
- - @Documented
- - @Inherited
- - @Retention
- - @Repeatable
+ - `@Target`
+ - `@Documented`
+ - `@Retention`
+ - `@Inherited`
+ - `@Repeatable`
 
-#### @Target
+#### `@Target`
 애너테이션이 적용가능한 대상을 지정하는데 사용.
 {: .notice}
 
@@ -56,7 +56,7 @@ comments: true
  - TYPE_USE: 타입이 사용되는 모든 곳 (since 1.8)  
 
 
-#### @Retention
+#### `@Retention`
 
 애너테이션이 유지되는 기간을 지정하는데 사용
 {: .notice}
@@ -75,21 +75,22 @@ comments: true
    - 실행시에 '리플렉션(reflection)'을 통해 클래스 파일에 저장된 애너테이션의 정보를 읽어서 처리할 수 있다.  
    - 예: `@FunctionalInterface`  
 
-> ※ **지역 변수에 붙은 애너테이션**은 **컴파일러만 인식**할 수 있으므로,
+※ **지역 변수에 붙은 애너테이션**은 **컴파일러만 인식**할 수 있으므로,
 **유지정책이 'RUNTIME'** 인 애너테이션을 **지역변수에 붙여도 실행 시에는 인식되지 않는다.**  
+{: .notice}
 
-#### @Documented
+#### `@Documented`
 
 애너테이션에 대한 정보가 javadoc으로 작성한 문서에 포함되도록 한다.  
 {: .notice}
 
-#### @Inherited
+#### `@Inherited`
 
 애너테이션이 자손 클래스에 상속되도록 한다.  
 조상클래스에 이 애너테이션을 붙이면, 자손 클래스도 이 애너테이션이 붙은 것과 같이 인식된다.  
 {: .notice}
 
-#### @Repeatable
+#### `@Repeatable`
 
 보통은 하나의 대상에 한 종류의 애너테이션을 붙이는데, `@Repeatable`이 붙은 애너테이션은 여러 번 붙일 수 있다.  
 {: .notice}
@@ -129,7 +130,7 @@ public class MyClass {
 }
 ~~~
 
-#### @Native
+#### `@Native`
 
 네이티브 메서드에 의해 참조되는 상수 필드에 붙이는 애너테이션.  
 아래는 `java.lang.Long` 클래스에 정의된 상수이다.  
