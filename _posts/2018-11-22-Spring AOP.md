@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Multipart Resolver"
-date: 2017-12-25
-excerpt: "spring file upload resolver"
-tags: [springframework, Aop]
+title: "Spring AOP"
+date: 2018-11-22
+excerpt: "관점 지향 프로그래밍"
+tags: [springframework, AOP]
 spring-framework: true
 comments: true
 ---
