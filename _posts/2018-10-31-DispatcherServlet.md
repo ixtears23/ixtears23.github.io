@@ -8,8 +8,7 @@ spring-framework: true
 comments: true
 ---
 
-
-# 1.2. DispatcherServlet.md
+# DispatcherServlet.md
 [Spring WebFlux와 동일](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web-reactive.html#webflux-dispatcher-handler)
 
 많은 다른 웹 프레임 워크와 마찬가지로 Spring MVC는 프런트 컨트롤러 패턴을 중심으로 설계되었으며,  
