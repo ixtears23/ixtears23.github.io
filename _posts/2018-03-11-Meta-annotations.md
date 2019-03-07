@@ -3,6 +3,7 @@ layout: post
 title: "Meta-annotations"
 date: 2018-03-11
 tags: [springframework,annotation]
+excerpt: "-"
 spring-framework: true
 comments: true
 ---

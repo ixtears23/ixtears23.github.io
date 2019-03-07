@@ -3,6 +3,7 @@ layout: post
 title: "자동 감지 된 구성 요소에 대한 범위 제공"
 date: 2018-03-13
 tags: [springframework]
+excerpt: "자동 감지된 bean 은 singleton 입니다."
 spring-framework: true
 comments: true
 ---

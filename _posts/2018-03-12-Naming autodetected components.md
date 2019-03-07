@@ -2,6 +2,7 @@
 layout: post
 title: "자동 감지 된 구성 요소 이름 지정"
 date: 2018-03-12
+excerpt: "-"
 tags: [springframework]
 spring-framework: true
 comments: true
