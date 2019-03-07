@@ -28,7 +28,7 @@ comments: true
 
 **아래 창이 뜬다.**  
 <figure>
-	<a href="https://github.com/ixtears23/docs/blob/master/spring/img/03.PNG?raw=true"><img src="https://github.com/ixtears23/docs/blob/master/spring/img/03.png?raw=true"></a>
+	<a href="https://github.com/ixtears23/docs/blob/master/spring/img/03.PNG?raw=true"><img src="https://github.com/ixtears23/docs/blob/master/spring/img/03.PNG?raw=true"></a>
 </figure>
 
 **`-D` 옵션으로 `SYSTYPE`에 값을 주면**  
