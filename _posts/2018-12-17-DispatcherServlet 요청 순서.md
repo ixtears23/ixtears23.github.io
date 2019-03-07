@@ -3,7 +3,7 @@ layout: post
 title: "DispatcherServlet 요청 순서"
 date: 2018-12-17
 excerpt: "DispatcherServlet 요청 순서"
-tags: [springframework, Multipart, Resolver]
+tags: [springframework,DispatcherServlet]
 spring-framework: true
 comments: true
 ---
