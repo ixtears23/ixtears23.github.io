@@ -17,7 +17,7 @@ comments: true
 **`TOMCAT`에서 설정한다.**  
 
 **톰캣 서버 탭에서 톰캣 서버를 더블클릭한다.**  
-<figure style="text-aling: left;">
+<figure>
 	<a href="https://github.com/ixtears23/docs/blob/master/spring/img/01.png?raw=true"><img src="https://github.com/ixtears23/docs/blob/master/spring/img/01.png?raw=true"></a>
 </figure>
 
@@ -28,7 +28,7 @@ comments: true
 
 **아래 창이 뜬다.**  
 <figure>
-	<a href="https://github.com/ixtears23/docs/blob/master/spring/img/03.png?raw=true"><img src="https://github.com/ixtears23/docs/blob/master/spring/img/03.png?raw=true"></a>
+	<a href="https://github.com/ixtears23/docs/blob/master/spring/img/03.PNG?raw=true"><img src="https://github.com/ixtears23/docs/blob/master/spring/img/03.png?raw=true"></a>
 </figure>
 
 **`-D` 옵션으로 `SYSTYPE`에 값을 주면**  
