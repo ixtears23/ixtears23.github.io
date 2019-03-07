@@ -2,7 +2,7 @@
 layout: post
 title: "DispatcherServlet"
 date: 2017-12-25
-excerpt: "spring file upload resolver"
+excerpt: "스프링 중앙 서블릿"
 tags: [springframework, Multipart, Resolver]
 spring-framework: true
 comments: true
