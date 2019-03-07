@@ -17,14 +17,19 @@ comments: true
 **`TOMCAT`에서 설정한다.**  
 
 **톰캣 서버 탭에서 톰캣 서버를 더블클릭한다.**  
-![01](https://github.com/ixtears23/docs/blob/master/spring/img/01.PNG?raw=true)  
+<figure>
+	<a href="https://github.com/ixtears23/docs/blob/master/spring/img/01.png?raw=true"><img src="https://github.com/ixtears23/docs/blob/master/spring/img/01.png?raw=true"></a>
+</figure>
 
 **Open launch configuration 을 클릭한다.**  
-![02](https://github.com/ixtears23/docs/blob/master/spring/img/02.PNG?raw=true)  
+<figure>
+	<a href="https://github.com/ixtears23/docs/blob/master/spring/img/02.PNG?raw=true"><img src="https://github.com/ixtears23/docs/blob/master/spring/img/03.PNG?raw=true"></a>
+</figure>
 
 **아래 창이 뜬다.**  
-
-![03](https://github.com/ixtears23/docs/blob/master/spring/img/03.PNG?raw=true)  
+<figure>
+	<a href="https://github.com/ixtears23/docs/blob/master/spring/img/03.png?raw=true"><img src="https://github.com/ixtears23/docs/blob/master/spring/img/03.png?raw=true"></a>
+</figure>
 
 **`-D` 옵션으로 `SYSTYPE`에 값을 주면**  
 **`#{systemProperties['SYSTYPE']}` 으로 읽을 수 있다.**  
