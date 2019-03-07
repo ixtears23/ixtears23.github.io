@@ -3,8 +3,9 @@ layout: post
 title:  "Markdown Syntax"
 date:   2016-03-15
 excerpt: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
+etc: true
 tag:
-- markdown 
+- markdown
 - syntax
 - sample
 - test
@@ -109,4 +110,3 @@ Press <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to move your car. **Midto
 ## Notices
 
 Watch out! You can also add notices by appending `{: .notice}` to a paragraph.
-
