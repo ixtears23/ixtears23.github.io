@@ -28,6 +28,7 @@ Pointcut 표현식과 일치하는 조인 포인트의 개념은 AOP의 핵심�
 #### Before Advice
 > Before Advice는 일치하는 메소드 실행전에 실행 됩니다.  
 > 다음 예제와 같이 <aop : before> 요소를 사용하여 <aop : aspect> 내부에서 선언됩니다.  
+
 ~~~xml
 <aop:aspect id="beforeExample" ref="aBean">
 
@@ -39,8 +40,10 @@ Pointcut 표현식과 일치하는 조인 포인트의 개념은 AOP의 핵심�
 
 </aop:aspect>
 ~~~
+
 여기에서 `dataAccessOperation`은 최상위 (`<aop:config>`) 수준에 정의 된 pointcut의 ID입니다.  
-`pointcut` 인라인으로 정의하려면, `pointcut-ref` 속성을 `pointcut` 속성으로 바꾸십시오.
+`pointcut` 인라인으로 정의하려면, `pointcut-ref` 속성을 `pointcut` 속성으로 바꾸십시오.  
+
 ~~~xml
 <aop:aspect id="beforeExample" ref="aBean">
 
@@ -78,7 +81,7 @@ before advice와 같은 방법으로 <aop : aspect> 내부에 선언 됩니다.
 ~~~
 
 `@AspectJ` 스타일에서와 마찬가지로, advice body 내에서 리턴 값을 얻을 수 있습니다.  
-이를 수행하려면 다음 예제에서와 같이 **리턴 속성**을 사용하여 **리턴 값이 전달되어야하는 매개 변수의 이름을 지정**하십시오.  
+이를 수행하려면 다음 예제에서와 같이 __리턴 속성__ 을 사용하여 __리턴 값이 전달되어야하는 매개 변수의 이름__ 을 지정하십시오.  
 
 ~~~xml
 
@@ -106,6 +109,7 @@ public void doAccessCheck(Object retVal) {...
 #### After Throwing Advice
 예외를 throw하여 일치하는 메서드 실행이 종료 될 때 advice를 throw 한 후 실행합니다.  
 다음 예제와 같이 after-throwing 요소를 사용하여 <aop : aspect> 내부에서 선언됩니다.  
+
 ~~~xml
 <aop:aspect id="afterThrowingExample" ref="aBean">
 
@@ -118,7 +122,7 @@ public void doAccessCheck(Object retVal) {...
 </aop:aspect>
 ~~~
 
-@AspectJ 스타일에서와 마찬가지로, advice body 내에서 던져진 예외를 얻을 수 있습니다.  
+`@AspectJ` 스타일에서와 마찬가지로, advice body 내에서 던져진 예외를 얻을 수 있습니다.  
 이렇게하려면 throwing 속성을 사용하여 다음 예제와 같이 예외를 전달해야하는 매개 변수의 이름을 지정합니다.  
 
 ~~~xml
@@ -180,6 +184,7 @@ proceed 메서드는 Object []를 사용하여 호출 할 수도 있습니다.
 </aop:aspect>
 ~~~
 doBasicProfiling advice의 구현은 다음 예제처럼 `@AspectJ` 예제와 똑같을 수있습니다. (물론 annotation은 제외합니다).  
+
 ~~~java
 public Object doBasicProfiling(ProceedingJoinPoint pjp) throws Throwable {
     // start stopwatch
@@ -195,6 +200,7 @@ public Object doBasicProfiling(ProceedingJoinPoint pjp) throws Throwable {
 advice 메소드에 대한 인수 이름을 명시 적으로 지정하려면 advice 요소의 arg-names 속성을 사용하면됩니다.  
 이 메소드는 advice 주석의 argNames 속성과 동일한 방식으로 처리됩니다.  
 다음 예에서는 XML에서 인수 이름을 지정하는 방법을 보여줍니다.  
+
 ~~~xml
 <aop:before
     pointcut="com.xyz.lib.Pointcuts.anyPublicMethod() and @annotation(auditable)"
@@ -204,6 +210,7 @@ advice 메소드에 대한 인수 이름을 명시 적으로 지정하려면 adv
 
 arg-names 속성은 매개 변수 이름의 쉼표로 구분 된 목록을 허용합니다.  
 XSD 기반 접근 방식의 약간 더 관여 된 예는 강력한 입력 매개 변수와 함께 사용되는 몇 가지 주변 조언을 보여줍니다.  
+
 ~~~java
 package x.y.service;
 
@@ -222,6 +229,7 @@ public class DefaultFooService implements FooService {
 다음은 aspect 입니다. profile (..) 메소드가 많은 유형의 강력한 매개 변수를 허용한다는 사실에 유의하십시오.  
 그 중 첫 번째는 메소드 호출을 진행하는 데 사용되는 조인 포인트입니다.  
 이 매개 변수가 있으면 다음 예제와 같이 프로필 (..)이 주위의 조언으로 사용된다는 표시입니다.  
+
 ~~~java
 ackage x.y;
 
@@ -244,6 +252,7 @@ public class SimpleProfiler {
 ~~~
 
 마지막으로, 다음 예제 XML 구성은 특정 조인 포인트에 대한 선행 조언의 실행에 영향을줍니다.  
+
 ~~~xml
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
