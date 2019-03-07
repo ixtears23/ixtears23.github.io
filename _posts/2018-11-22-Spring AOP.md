@@ -262,7 +262,7 @@ public class SimpleProfiler {
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    
+
     <bean id="personService" class="x.y.service.DefaultPersonService"/>
 
     <!-- this is the actual advice itself -->
@@ -302,7 +302,7 @@ public final class Boot {
 
 이러한 Boot 클래스를 사용하면 표준 출력에 다음과 비슷한 출력을 얻을 수 있습니다.  
 ~~~java
-StopWatch 'Profiling for 'Pengo' and '12'': running time (millis) = 0
+StopWatch "Profiling for "Pengo" and "12"": running time (millis) = 0
 -----------------------------------------
 ms     %     Task name
 -----------------------------------------
