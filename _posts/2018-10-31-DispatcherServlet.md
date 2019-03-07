@@ -51,10 +51,11 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
 > ServletContext API를 직접 사용하는 것 외에도  
 > AbstractAnnotationConfigDispatcherServletInitializer를 확장하고  
 > 특정 메서드를 재정의 할 수 있습니다 ([컨텍스트 계층 구조](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-servlet-context-hierarchy)의 예제 참조).  
+
 ---
 
 다음은 DispatcherServlet을 등록하고 초기화하는 web.xml 구성 예제입니다.  
-~~~
+~~~xml
 <web-app>
 
     <listener>
