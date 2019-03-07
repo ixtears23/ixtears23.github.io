@@ -319,10 +319,10 @@ createDispatcherServlet 메소드를 대체 할 수 있습니다.
 * multipart file resolver를 지정하면 멀티 파트에 대한 요청이 검사됩니다.  
 multiparts가 발견되면 요청은 프로세스의 다른 요소에 의한 추가 처리를 위해 MultipartHttpServletRequest에 래핑됩니다.  
 다중 부분 처리에 대한 자세한 정보는 [Multipart resolver](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-multipart)를 참조하십시오.  
-* 적절한 핸들러가 검색됩니다. 핸들러가 발견되면 모델 또는 렌더링을 준비하기 위해  
+* 적절한 핸들러가 검색됩니다. 핸들러가 발견되면 모델 또는 렌더링을 준비하기 위해
 핸들러 (전 처리기, 포스트 프로세서 및 컨트롤러)와 연관된 실행 체인이 실행됩니다.  
 또는 주석이 달린 컨트롤러의 경우 뷰를 반환하는 대신 응답을 렌더링(HandlerAdapter 내에서) 할 수 있습니다.  
-* model이 반환되면 뷰가 렌더링됩니다. model이 반환되지 않으면  
+* model이 반환되면 뷰가 렌더링됩니다. model이 반환되지 않으면
 (아마도 보안상의 이유 때문에 요청을 가로 채는 전처리 기나 포스트 프로세서 때문일 수 있습니다.)  
 요청이 이미 충족 되었기 때문에 뷰가 렌더링되지 않습니다.  
 
@@ -330,12 +330,12 @@ WebApplicationContext에서 선언 된 **HandlerExceptionResolver Bean**은 **�
 이러한 exception resolvers를 사용하면 로직을 정의하여 예외를 처리 할 수 있습니다.  
 자세한 내용은 예외 해결([Exception Resolution](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-exceptionhandlers))을 참조하십시오.  
 
-Spring DispatcherServlet은 또한 Servlet API에 의해 지정된 `last-modification-date`의 리턴을 지원한다.  
+Spring DispatcherServlet은 또한 Servlet API에 의해 지정된 `last-modification-date`의 리턴을 지원합니다.  
 특정 요청에 대한 마지막 수정 날짜를 결정하는 과정은 간단합니다.  
 DispatcherServlet은 적절한 핸들러 매핑을 검색해서 핸들러가 LastModified 인터페이스를 구현하는지 테스트합니다.  
 그렇다면, LastModified 인터페이스의 long getLastModified (request) 메소드의 값이 클라이언트에 리턴됩니다.  
 
-`web.xml` 파일의 Servlet 선언에 Servlet **초기화 매개 변수 (init-param 요소)를 추가**하여  
+`web.xml` 파일의 Servlet 선언에 Servlet **초기화 매개 변수 (init-param 요소)를 추가**하여
 개별 DispatcherServlet 인스턴스를 **사용자 정의** 할 수 있습니다.  
 지원되는 매개 변수 목록은 다음 표를 참조하십시오.  
 
@@ -349,21 +349,21 @@ DispatcherServlet은 적절한 핸들러 매핑을 검색해서 핸들러가 Las
 
 ## 1.2.6. Interception
 모든 HandlerMapping 구현은 특정 기능을 적용하려는 경우에 유용한 핸들러 인터셉터를 지원합니다.  
-인터셉터는 모든 종류의 전처리 및 후 처리를 수행 할 수고 충분한 유연성을 제공하는 세 가지 메소드로  
+인터셉터는 모든 종류의 전처리 및 후 처리를 수행 할 수고 충분한 유연성을 제공하는 세 가지 메소드로
 `org.springframework.web.servlet` 패키지의 `HandlerInterceptor`를 구현해야합니다.  
-* preHandle(..) - 실제 핸들러가 실행되기 전에  
-* postHandle(..) - 핸들러가 실행 된 후  
-* afterCompletion(..) - 요청이 완료되면  
+* preHandle(..) - 실제 핸들러가 실행되기 전에
+* postHandle(..) - 핸들러가 실행 된 후
+* afterCompletion(..) - 요청이 완료되면
 preHandle (..) 메서드는 boolean 값을 반환합니다.  
 이 방법을 사용하여 실행 체인의 처리를 중단하거나 계속할 수 있습니다.  
 이 메서드가 true를 반환하면 handler 실행 체인이 계속됩니다.  
-false를 반환하면 DispatcherServlet은 인터셉터 자체가 요청을 처리하고  
+false를 반환하면 DispatcherServlet은 인터셉터 자체가 요청을 처리하고
 (예를 들어 적절한 뷰를 렌더링 한) 실행 체인에서 다른 인터셉터와 실제 처리기를 계속 실행하지 않는다고 가정합니다.  
 인터셉터를 구성하는 방법에 대한 예제는 MVC 구성 섹션의 [인터셉터](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-config-interceptors)를 참조하십시오.  
 개별 HandlerMapping 구현에 대한 설정자를 통해 직접 등록 할 수도 있습니다.  
 
-postHandle은 @ResponseBody 및 ResponseEntity 메소드에 대해 유용하지 않으며,  
+postHandle은 @ResponseBody 및 ResponseEntity 메소드에 대해 유용하지 않으며,
 응답은 HandlerAdapter 내에서와 postHandle 이전에 작성되고 커밋됩니다.  
 즉, 추가 헤더를 추가하는 것과 같이 응답을 변경하기에는 너무 늦었습니다.  
-이러한 시나리오의 경우 ResponseBodyAdvice를 구현하고  
+이러한 시나리오의 경우 ResponseBodyAdvice를 구현하고
 [Controller Advice bean](https://docs.spring.io/spring/docs/5.0.4.BUILD-SNAPSHOT/spring-framework-reference/web.html#mvc-ann-controller-advice)으로 선언하거나 RequestMappingHandlerAdapter에서 직접 구성 할 수 있습니다.  
