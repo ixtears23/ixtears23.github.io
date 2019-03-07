@@ -106,7 +106,9 @@ WebApplicationContext에 액세스해야하는 경우이를 조회 할 수 있�
 일반적으로 여러 개의 Servlet 인스턴스에서 공유해야 하는 데이터 저장소 및 비즈니스 서비스와 같은 인프라 bean을 포함합니다.  
 이러한 bean은 효과적으로 상속되며 서블릿 특정 클래스에서 재정의 (즉, 다시 선언) 될 수 있습니다.  
 자식 WebApplicationContext는 일반적으로 주어진 지역의 빈을 포함합니다.  
-![alt](https://github.com/ixtears23/docs/blob/master/mvc-context-hierarchy.png)
+{% capture images %}
+https://github.com/ixtears23/docs/blob/master/mvc-context-hierarchy.png
+{% endcapture %}
 
 다음은 WebApplicationContext 계층을 사용한 구성 예제입니다.
 ~~~java
