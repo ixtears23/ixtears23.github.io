@@ -7,7 +7,6 @@ spring-framework: true
 comments: true
 ---
 
-# Meta-annotations
 
 **Spring에서 제공하는 많은 annotation**은 여러분의 코드에서 *meta-annotations* 으로 사용할 수 있습니다.  
 

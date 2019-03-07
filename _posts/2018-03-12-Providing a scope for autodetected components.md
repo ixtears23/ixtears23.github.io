@@ -1,13 +1,12 @@
 ---
 layout: post
-title: "Providing a scope for autodetected components"
+title: "자동 감지 된 구성 요소에 대한 범위 제공"
 date: 2018-03-13
 tags: [springframework]
 spring-framework: true
 comments: true
 ---
 
-# 1.10.7. Providing a scope for autodetected components(자동 감지 된 구성 요소에 대한 범위 제공)
 
 일반적으로 Spring에서 관리하는 구성 요소와 마찬가지로  
 **자동 감지** 된 구성 요소의 **기본 범위**와 ***가장 일반적인 범위는*** **싱글 톤**입니다.  

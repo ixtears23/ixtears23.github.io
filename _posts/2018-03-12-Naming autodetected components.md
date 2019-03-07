@@ -7,7 +7,6 @@ spring-framework: true
 comments: true
 ---
 
-# Naming autodetected components(자동 감지 된 구성 요소 이름 지정)
 
 구성 요소가 검색 프로세스의 일부로 **자동 감지**되면  
 `BeanName`은 해당 스캐너에 알려진 **BeanNameGenerator 전략**에 의해 **생성**됩니다.  
