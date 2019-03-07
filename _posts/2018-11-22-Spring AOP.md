@@ -27,7 +27,7 @@ Pointcut 표현식과 일치하는 조인 포인트의 개념은 AOP의 핵심�
 
 #### Before Advice
 > Before Advice는 일치하는 메소드 실행전에 실행 됩니다.  
-> 다음 예제와 같이 <aop : before> 요소를 사용하여 <aop : aspect> 내부에서 선언됩니다.  
+> 다음 예제와 같이 `<aop:before>` 요소를 사용하여 `<aop:aspect>` 내부에서 선언됩니다.  
 
 ~~~xml
 <aop:aspect id="beforeExample" ref="aBean">
@@ -65,7 +65,7 @@ method 속성은 조언의 본문을 제공하는 메소드 (doAccessCheck)를 �
 
 #### After Returning Advice
 일치하는 메소드 실행이 정상적으로 완료되면 리턴되는 조언이 실행됩니다.  
-before advice와 같은 방법으로 <aop : aspect> 내부에 선언 됩니다.  
+before advice와 같은 방법으로 `<aop:aspect>` 내부에 선언 됩니다.  
 - 선언 방법  
 
 ~~~xml
@@ -107,8 +107,9 @@ public void doAccessCheck(Object retVal) {...
 ---
 
 #### After Throwing Advice
+
 예외를 throw하여 일치하는 메서드 실행이 종료 될 때 advice를 throw 한 후 실행합니다.  
-다음 예제와 같이 after-throwing 요소를 사용하여 <aop : aspect> 내부에서 선언됩니다.  
+다음 예제와 같이 after-throwing 요소를 사용하여 `<aop:aspect>` 내부에서 선언됩니다.  
 
 ~~~xml
 <aop:aspect id="afterThrowingExample" ref="aBean">
@@ -161,7 +162,7 @@ doRecoveryActions 메소드는 dataAccessEx라는 매개 변수를 선언해야�
 #### Around Advice
 마지막 조언은 Around Advice입니다. around advice는 매치 메소드 실행을 "around" 에서 실행한다.  
 메소드가 실행되기 전과 후에 모두 작업을 수행 할 수 있는 기회를 가지며 메소드가 언제, 실제로 어떻게 실행 되는지를 결정합니다.  
-around advice는 thread-safe 방식으로 메서드 실행 전후에 상태를 공유하는 데 자주 사용됩니다(예 : 타이머 시작 및 중지).  
+around advice는 thread-safe 방식으로 메서드 실행 전후에 상태를 공유하는 데 자주 사용됩니다(예: 타이머 시작 및 중지).  
 항상 귀하의 요구 사항을 충족시키는 가장 강력한 형태의 조언을 사용하십시오.  
 before advice가 그 일을 할 수 있다면 around advice를 사용하지 마십시오.  
 
@@ -261,7 +262,7 @@ public class SimpleProfiler {
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <!-- this is the object that will be proxied by Spring's AOP infrastructure -->
+    
     <bean id="personService" class="x.y.service.DefaultPersonService"/>
 
     <!-- this is the actual advice itself -->
