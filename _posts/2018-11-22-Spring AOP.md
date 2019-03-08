@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-spring-framework
 title: "Spring AOP"
 date: 2018-11-22
 excerpt: "관점 지향 프로그래밍"

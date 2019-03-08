@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-spring-framework
 title: "PlaceHolder"
 date: 2018-12-17
 excerpt: "properties 설정"

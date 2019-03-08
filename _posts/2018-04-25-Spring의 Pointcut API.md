@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-spring-framework
 title: "Spring의 Pointcut API"
 date: 2018-04-25
 excerpt: "-"

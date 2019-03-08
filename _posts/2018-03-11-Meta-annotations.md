@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-spring-framework
 title: "Meta-annotations"
 date: 2018-03-11
 tags: [springframework,annotation]

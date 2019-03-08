@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-spring-framework
 title: "Spring Dependencies"
 date: 2018-11-07
 excerpt: "Spring 의존성 주입"

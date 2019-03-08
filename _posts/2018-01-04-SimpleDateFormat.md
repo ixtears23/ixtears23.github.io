@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-java-basic
 title: "SimpleDateFormat"
 date: 2018-01-04
 excerpt: "java date"

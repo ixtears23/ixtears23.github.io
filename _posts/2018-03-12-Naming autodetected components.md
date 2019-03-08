@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-spring-framework
 title: "BeanNameGenerator - Bean naming"
 date: 2018-03-12
 excerpt: "-"

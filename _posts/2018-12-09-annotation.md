@@ -1,5 +1,5 @@
 ---
-layout: post-java
+layout: post-java-basic
 title: "Java Annotation"
 date: 2018-12-09
 excerpt: "Java 주석"

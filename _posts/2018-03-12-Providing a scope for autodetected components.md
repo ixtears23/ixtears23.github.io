@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-spring-framework
 title: "@Scope annotation"
 date: 2018-03-13
 tags: [springframework]
