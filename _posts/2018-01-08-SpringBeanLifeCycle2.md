@@ -10,8 +10,8 @@ comments: true
 
 
 
- ##### 스프링 bean factory는 스프링 컨테이너를 통해 만들어진 빈의 라이프 사이클을 관리한다.
- ##### bean의 lifeCycle은 두 가지 그룹으로 크게 분류 할 수있는 콜백 메소드로 구성된다.
+스프링 bean factory는 스프링 컨테이너를 통해 만들어진 빈의 라이프 사이클을 관리한다.
+bean의 lifeCycle은 두 가지 그룹으로 크게 분류 할 수있는 콜백 메소드로 구성된다.
 
  * 초기화 이후 콜백 메소드
  * 파기 이전 콜백 메소드
@@ -157,7 +157,7 @@ public class BemoBeanTypeFour
     {
         System.out.println("Method customInit() invoked...");
     }
-    
+
     @PreDestroy
     public void customDestroy()
     {
