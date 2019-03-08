@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-java
 title: "Java Annotation"
 date: 2018-12-09
 excerpt: "Java 주석"
@@ -268,5 +268,5 @@ enum TestType { FIRST, FINAL }
 {: .notice}
 
 
-  
+
 **※ JAVA의 정석 3rd Edition 을 참고해서 정리함.**
