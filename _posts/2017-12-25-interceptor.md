@@ -1,5 +1,5 @@
 ---
-layout: post-spring-framework
+layout: spring-framework-post
 title: "interceptor"
 date: 2017-12-25
 excerpt: "springframework interceptor"

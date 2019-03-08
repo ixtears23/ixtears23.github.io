@@ -1,5 +1,5 @@
 ---
-layout: post-spring-framework
+layout: spring-framework-post
 title: "Spring annotation - @Bean @Component @Qualifier"
 date: 2018-03-13
 tags: [springframework]

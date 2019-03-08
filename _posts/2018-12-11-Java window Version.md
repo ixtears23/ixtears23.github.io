@@ -1,5 +1,5 @@
 ---
-layout: post-java-basic
+layout: java-basic-post
 title: "Java window Version"
 date: 2018-12-11
 excerpt: "java 윈도우 버전 설정"

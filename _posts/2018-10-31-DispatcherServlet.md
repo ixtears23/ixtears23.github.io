@@ -1,5 +1,5 @@
 ---
-layout: post-spring-framework
+layout: spring-framework-post
 title: "DispatcherServlet"
 date: 2017-12-25
 excerpt: "스프링 중앙 서블릿"

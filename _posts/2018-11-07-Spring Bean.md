@@ -1,5 +1,5 @@
 ---
-layout: post-spring-framework
+layout: spring-framework-post
 title: "Srping Bean"
 date: 2018-11-07
 tags: [springframework,annotation]

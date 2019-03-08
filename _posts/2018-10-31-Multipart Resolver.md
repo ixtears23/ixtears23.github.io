@@ -1,5 +1,5 @@
 ---
-layout: post-spring-framework
+layout: spring-framework-post
 title: "Multipart Resolver"
 date: 2017-12-25
 excerpt: "spring file upload resolver"

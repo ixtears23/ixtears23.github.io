@@ -1,5 +1,5 @@
 ---
-layout: post-spring-framework
+layout: spring-framework-post
 title: "@Configuration and @Bean"
 date: 2018-04-23
 excerpt: "@Bean 및 @Configuration 기본 개념"

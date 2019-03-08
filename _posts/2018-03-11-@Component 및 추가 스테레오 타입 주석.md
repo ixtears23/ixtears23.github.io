@@ -1,5 +1,5 @@
 ---
-layout: post-spring-framework
+layout: spring-framework-post
 title: "@Component 및 추가 스테레오 타입 주석"
 date: 2018-03-11
 excerpt: "stereotype 주석"

@@ -1,5 +1,5 @@
 ---
-layout: post-spring-framework
+layout: spring-framework-post
 title: "spring-context-indexer"
 date: 2018-04-20
 excerpt: "후보 구성 요소의 색인 생성"

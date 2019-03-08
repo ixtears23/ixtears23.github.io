@@ -1,5 +1,5 @@
 ---
-layout: post-db
+layout: db-post
 title: "DBeaver 단축키"
 date: 2018-08-05
 excerpt: "shortcut"

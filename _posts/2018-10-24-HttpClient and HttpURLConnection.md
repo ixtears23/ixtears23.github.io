@@ -1,5 +1,5 @@
 ---
-layout: post-java-basic
+layout: java-basic-post
 title: "HttpClient and HttpURLConnection"
 date: 2018-10-24
 excerpt: "server에서 http요청하는 방법"

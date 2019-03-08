@@ -1,5 +1,5 @@
 ---
-layout: post-spring-framework
+layout: spring-framework-post
 title: "@Autowired and @ComponentScan"
 date: 2018-03-11
 excerpt: "스테레오 타입 클래스를 자동으로 감지하고 ApplicationContext에 등록"

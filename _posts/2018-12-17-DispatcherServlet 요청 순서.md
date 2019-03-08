@@ -1,5 +1,5 @@
 ---
-layout: post-spring-framework
+layout: spring-framework-post
 title: "DispatcherServlet 요청 순서"
 date: 2018-12-17
 excerpt: "DispatcherServlet 요청 순서"
