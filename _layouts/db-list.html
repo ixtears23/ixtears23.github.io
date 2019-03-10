@@ -26,12 +26,11 @@ layout: compress
                         {% if post.db %}
                     <ul>
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
-                            <a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                            <p>{{ post.date | date_to_string }}</p>
+                            <a class="zoombtn" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a> - {{ post.date | date_to_string }}
                             <p class="entry-meta">
                               {% for tag in post.tags %}
                               <a href="{{ site.url }}/tags/#{{ tag }}" title="Pages tagged {{ tag }}" class="tag"
-                                  style="font-size: x-smaller; padding-left: 5px; padding-right: 5px;">{{ tag }}</a>
+                                  style="font-size: x-small; padding-left: 5px; padding-right: 5px;">{{ tag }}</a>
                               {% endfor %}
                             </p>
                         </li>
