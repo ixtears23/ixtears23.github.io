@@ -8,7 +8,7 @@ network: true
 comments: true
 ---
 
-# HAL
+## HAL
 
 *Hypertext Application Language*  
 
@@ -106,7 +106,7 @@ HAL은 리소스와 링크의 두 가지 개념을 기반으로 요소를 표현
 
 [출처: 위키피디아](https://en.wikipedia.org/wiki/Hypertext_Application_Language)  
 
-# HATEOAS  
+## HATEOAS  
 
 *Hypermedia As The Engine Of Application State*  
 
