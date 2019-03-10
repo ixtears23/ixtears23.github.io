@@ -3,38 +3,43 @@ layout: javascript-post
 title: "javascript 기초 문법"
 date: 2017-09-07
 excerpt: ""
-tags: [javascript],
+tags: [javascript]
 javascript: true
 comments: true
 ---
 
 
-- select 자기 자신만 체크(readonly  기능 비슷)
+- select 자기 자신만 체크(readonly  기능 비슷)  
+
 ~~~javascript
 $("[name='APC_DIV_CODE']").attr("onFocus", "this.initialSelect = this.selectedIndex");
 $("[name='APC_DIV_CODE']").attr("onChange", "this.selectedIndex = this.initialSelect");
 ~~~
 
-- radio 자기 자신 외에는 체크 못함(readonly 기능 비슷)
+- radio 자기 자신 외에는 체크 못함(readonly 기능 비슷)  
+
 ~~~javascript
 $("[name='PRUS_SHPE_CODE']:not(:checked)").prop("disabled", true);
 ~~~
 
-- focusout 포커스 out 될 때
+- focusout 포커스 out 될 때  
+
 ~~~javascript
 $('.hrm_number').focusout(function(){
   $(this).val(addComma($(this).val()));
 });
 ~~~
 
-- focusin 포커스 in 될 때
+- focusin 포커스 in 될 때  
+
 ~~~javascript
 $('.hrm_number').focusin(function(){
   $(this).val(delComma($(this).val()));
 });
 ~~~
 
-- each	selector에 속한 것 모두 실행
+- each	selector에 속한 것 모두 실행  
+
 ~~~javascript
 $('.hrm_number').each(function(){
   $(this).val(addComma($(this).val()));
