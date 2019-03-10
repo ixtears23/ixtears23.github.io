@@ -11,7 +11,7 @@ comments: true
 
 
 	- 테이블 컬럼 코멘트 조회
-  ~~~oracle
+  ~~~
 		SELECT T.COLUMN_NAME, T.COLUMN_ID, C.COMMENTS
 		FROM USER_TAB_COLUMNS T, USER_COL_COMMENTS C
 		WHERE T.TABLE_NAME = C.TABLE_NAME
@@ -22,25 +22,25 @@ comments: true
 
 
 	- TIMESTAMP
-  ~~~oracle
+  ~~~
 		SELECT * FROM AS OF TIMESTAMP(SYSDATE - INTERVAL '1' MINUTE)
 		  FROM 테이블명
       ~~~
 
 
 	- 오라클 COLUMN 추가 시간
-  ~~~oracle
+  ~~~
 		SELECT * FROM USER_TAB_COLUMNS A
 		WHERE A.TABLE_NAME = '테이블명'
     ~~~
 
 	- 오라클 테이블 수정 시간 LAST DDL TIME
-  ~~~oracle
+  ~~~
 		SELECT * FROM DBA_OBJECTS WHERE OBJECT_NAME = '테이블명'
     ~~~
 
 	- 오라클 SELECT UPDATE / MERGE INTO
-  ~~~oracle
+  ~~~
 		UPDATE
 		/*+ bypass_ujvc */
 		(SELECT A.RQST_EMP_NO AS RQST_EMP_NO,
@@ -88,7 +88,7 @@ comments: true
 
 	- 컬럼 코멘트와 데이터 조회
 	예제)
-  ~~~oracle
+  ~~~
 		SELECT MAX(COL1) AS RQST_NO,
 		MAX(COL2) AS RQST_EMP_NO,
 		MAX(COL3) AS RQST_DEPT_CD
@@ -110,7 +110,7 @@ comments: true
 		 ~~~
 
      모든 테이블 조회
-     ~~~oracle
+     ~~~
      SELECT 'SELECT ''' || TABLE_NAME || ''', '''
             || COLUMN_NAME || ''', COUNT(*) FROM '
             || TABLE_NAME || ' WHERE '
@@ -120,7 +120,7 @@ comments: true
      ~~~
 
      FUNCTION, 프로시저 등 스크립트 내용 조회
-     ~~~db
+     ~~~
      SELECT * FROM USER_SOURCE
      WHERE UPPER(TEXT) LIKE '%TB_ACT_COMM_CD_M%'
      ~~~
