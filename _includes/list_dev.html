@@ -1,6 +1,0 @@
-{% assign devs = site.dev| sort:'title' %}
-{% for dev in devs %}
-{% if page.url != dev.url  and include.taxonomy == nil or dev.url contains include.taxonomy %}
-<a  href={{ dev.url | prepend: site.baseurl }}>{{dev.title}}</a>
-{% endif %}
-{% endfor %} 

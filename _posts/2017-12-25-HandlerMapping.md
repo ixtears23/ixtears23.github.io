@@ -1,5 +1,5 @@
 ---
-layout: post-spring-framework
+layout: spring-framework-post
 title: "HandlerMapping"
 date: 2017-12-25
 excerpt: "RequestMappingHandlerMapping"
@@ -9,7 +9,7 @@ comments: true
 ---
 
 
-##### Default is `BeanNameUrlHandlerMapping` and `RequestMappingHandlerMapping`.
+**Default is `BeanNameUrlHandlerMapping` and `RequestMappingHandlerMapping`.**  
 
 # RequestMappingHandlerMapping
 > 경로 `org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping`
