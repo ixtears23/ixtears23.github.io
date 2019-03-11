@@ -1,6 +1,6 @@
 ---
 layout: spring-framework-post
-title: "@ComponentScan 으로 자동 검색"
+title: "ComponentScan 애너테이션으로 자동 검색"
 date: 2018-03-11
 tags: [springframework,annotation]
 excerpt: "-"
