@@ -1,5 +1,5 @@
 # Allow crawling of all content
-# User-agent: *
+User-agent: *
 # Disallow:
 Allow: /
 Sitemap: https://ixtears23.github.io/sitemap.xml
