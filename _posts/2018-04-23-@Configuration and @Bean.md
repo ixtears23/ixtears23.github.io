@@ -1,6 +1,6 @@
 ---
 layout: spring-framework-post
-title: "@Configuration and @Bean"
+title: "Configuration, Bean 애너테이션"
 date: 2018-04-23
 excerpt: "`@Bean` 및 `@Configuration` 기본 개념"
 tags: [springframework,jsr330]
