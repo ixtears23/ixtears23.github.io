@@ -20,7 +20,7 @@ comments: true
 예를 들어, 다음 **두 구성 요소가 검색된 경우** 이름은 `myMovieLister` 및 `movieFinderImpl`입니다.  
 ~~~java
 @Service("myMovieLister")
-public class SimpleMovieLister {
+public class SimpleMovieLister { 
     // ...
 }
 ~~~
