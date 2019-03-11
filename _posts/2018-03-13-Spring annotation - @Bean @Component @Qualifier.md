@@ -1,6 +1,6 @@
 ---
 layout: spring-framework-post
-title: "Spring annotation - @Bean @Component @Qualifier"
+title: "Spring annotation - Bean, Component, Qualifier"
 date: 2018-03-13
 tags: [springframework]
 excerpt: "스프링 컴포넌트는 bean 정의 메타 데이터를 컨테이너에 제공할 수있다."
