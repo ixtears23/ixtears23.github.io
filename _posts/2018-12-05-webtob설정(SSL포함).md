@@ -1,10 +1,10 @@
 ---
-layout: spring-framework-post
+layout: server-webtob-post
 title: "webtob설정(SSL포함)"
 date: 2018-12-17
 excerpt: ""
 tags: [webtob,ssl]
-spring-webtob: true
+server-webtob: true
 comments: true
 ---
 
