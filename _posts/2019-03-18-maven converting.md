@@ -118,8 +118,8 @@ pom.xml 을 작성하고 난 뒤에 프로젝트를 선택하고 alt+F5를 눌�
 이제 톰캣서버를 clean 하고 Publish 한 다음에 톰캣 서버를 올려주세요.  
 
 <figure>
-	<a href="https://github.com/ixtears23/img/blob/master/convert14.png?raw=true">
-  <img src="https://github.com/ixtears23/img/blob/master/convert14.png?raw=true"></a>
+	<a href="https://github.com/ixtears23/img/blob/master/convert14_1.png?raw=true">
+  <img src="https://github.com/ixtears23/img/blob/master/convert14_1.png?raw=true"></a>
 </figure>
 
 서버를 올린경우 에러가 발생할 수 있습니다.  
