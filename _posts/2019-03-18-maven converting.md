@@ -1,7 +1,7 @@
 ---
 layout: spring-framework-post
 title: "dynamic web project 를 maven 으로 convert 하기"
-date: 2019-03-19
+date: 2019-03-18
 excerpt: ""
 tags: [springframework,maven]
 spring-framework: true
@@ -34,7 +34,7 @@ Group Id와 Artifact Id를 입력하고 Finish 합니다.
 </figure>
 
 src/main/java, src/main/resources 폴더를 만들어주세요.  
-Update exclusion filters in other source folders to solve nesting 
+Update exclusion filters in other source folders to solve nesting
 체크하셔야 합니다.  
 
 <figure>
@@ -144,7 +144,7 @@ context-param 태그를 추가하시면 됩니다.
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-    
+
     <context-param>
     	<param-name>contextConfigLocation</param-name>
     	<param-value>classpath:spring/applicationContext.xml</param-value>
@@ -175,21 +175,3 @@ context-param 태그를 추가하시면 됩니다.
   </welcome-file-list>
 </web-app>
 ~~~
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
