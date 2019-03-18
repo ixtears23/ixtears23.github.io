@@ -111,8 +111,8 @@ pom.xml 을 작성하고 난 뒤에 프로젝트를 선택하고 alt+F5를 눌�
 그럼 아래처럼 mavenDependencies를 확인하실 수 있습니다.  
 
 <figure>
-	<a href="https://github.com/ixtears23/img/blob/master/convert13.png?raw=true">
-  <img src="https://github.com/ixtears23/img/blob/master/convert13.png?raw=true"></a>
+	<a href="https://github.com/ixtears23/img/blob/master/convert13_1.png?raw=true">
+  <img src="https://github.com/ixtears23/img/blob/master/convert13_1.png?raw=true"></a>
 </figure>
 
 이제 톰캣서버를 clean 하고 Publish 한 다음에 톰캣 서버를 올려주세요.  
