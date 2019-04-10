@@ -49,12 +49,10 @@ public class LambdaEx1 {
 ### output1
 
 ~~~
-
 f1.run()
 f2.run()
 f3.run()
 f1.run()
 run()
-
 ~~~
 
