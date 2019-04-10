@@ -73,7 +73,6 @@ public class ArrayListLinkedListTest {
 ### output1
 
 ~~~
-
 = 순차적으로 추가하기 =
 ArrayList :1638
 LinkedList :1353
@@ -89,13 +88,11 @@ LinkedList :404
 = 순차적으로 삭제하기 =
 ArrayList :16
 LinkedList :45
-
 ~~~
 
 ### output2
 
 ~~~
-
 = 순차적으로 추가하기 =
 ArrayList :1464
 LinkedList :1496
@@ -111,7 +108,6 @@ LinkedList :258
 = 순차적으로 삭제하기 =
 ArrayList :16
 LinkedList :42
-
 ~~~
 
 ---
@@ -162,21 +158,17 @@ public class ArrayListLinkedListTest2 {
 ### output1
 
 ~~~
-
 = 접근시간테스트 =
 ArrayList :1
 LinkedList :323
-
 ~~~
 
 ### output2
 
 ~~~
-
 = 접근시간테스트 =
 ArrayList :1
 LinkedList :362
-
 ~~~
 
 ---
