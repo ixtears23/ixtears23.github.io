@@ -32,6 +32,18 @@ Hamcrest은 일치 규칙을 선언적으로 정의 할 수 있도록 정규 일
 UI 유효성 검사 또는 데이터 필터링과 같이 matchers가 사용할 수없는 상황이 많이 있지만 matcher는 가장 일반적으로 사용되는 **유연한 테스트를 작성** 하는 영역에 있습니다.  
 이 튜토리얼에서는 **단위 테스트를 위해 Hamcrest를 사용하는 방법** 을 보여줍니다.  
 
+### 의존성 추가
+
+~~~xml
+<dependency>
+    <groupId>org.hamcrest</groupId>
+    <artifactId>hamcrest</artifactId>
+    <version>2.1</version>
+    <scope>test</scope>
+</dependency>
+~~~
+
+
 #### first Hamcrest test
 
 `JUnit`의 `assertEquals` 메소드를 사용하는 대신, 우리는 **정적으로 가져 오는 Hamcrest** 의 **`assertThat` 구문** 과 **표준 `matcher` 세트** 를 사용합니다.  
