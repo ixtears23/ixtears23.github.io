@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ArrayListLinkedListTest {
+public class ListSpeedTest {
 
 	public static void main(String[] args) {
 
 		ArrayList<String> al = new ArrayList<>(2000000);
 		LinkedList<String> ll = new LinkedList<>();
-		
+
 		System.out.println("= 순차적으로 추가하기 =");
 		System.out.println("ArrayList :" + add1(al));
 		System.out.println("LinkedList :" + add1(ll));
@@ -30,7 +30,7 @@ public class ArrayListLinkedListTest {
 		System.out.println("LinkedList :" + remove1(ll));
 		System.out.println();
 	}
-	
+
 	public static long add1(List<String> al) {
 		long start = System.currentTimeMillis();
 		for(int i = 0; i < 1000000; i++) {
@@ -39,7 +39,7 @@ public class ArrayListLinkedListTest {
 		long end = System.currentTimeMillis();
 		return end - start;
 	}
-	
+
 	public static long add2(List<String> list) {
 		long start = System.currentTimeMillis();
 		for(int i = 0; i < 10000; i++) {
@@ -48,7 +48,7 @@ public class ArrayListLinkedListTest {
 		long end = System.currentTimeMillis();
 		return end - start;
 	}
-	
+
 	public static long remove1(List<String> list) {
 		long start = System.currentTimeMillis();
 		for(int i = list.size() - 1; i >= 0; i--) {
@@ -57,7 +57,7 @@ public class ArrayListLinkedListTest {
 		long end = System.currentTimeMillis();
 		return end - start;
 	}
-	
+
 	public static long remove2(List<String> list) {
 		long start = System.currentTimeMillis();
 		for(int i = 0; i < 10000; i++) {
@@ -129,22 +129,22 @@ import java.util.List;
 public class ArrayListLinkedListTest2 {
 
 	public static void main(String[] args) {
-		
+
 		ArrayList<Object> al = new ArrayList<>(1000000);
 		LinkedList<Object> ll = new LinkedList<>();
 		add(al);
 		add(ll);
-		
+
 		System.out.println("= 접근시간테스트 =");
 		System.out.println("ArrayList :" + access(al));
 		System.out.println("LinkedList :" + access(ll));
-		
+
 	}
-	
+
 	public static void add(List<Object> list) {
 		for(int i = 0; i < 100000; i++) list.add(i + "");
 	}
-	
+
 	public static long access(List<?> list) {
 		long start = System.currentTimeMillis();
 		for(int i = 0; i < 10000; i++) list.get(i);
@@ -184,4 +184,3 @@ LinkedList :362
 |:---|:---:|:---:|:---|
 |ArrayList|빠르다|느리다|순차적인 추가삭제는 더 빠름.  비효율적인 메모리사용.
 |LinkedList|느리다|빠르다|데이터가 많을수록 접근성이 떨어짐.|
-
