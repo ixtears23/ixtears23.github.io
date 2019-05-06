@@ -1,6 +1,6 @@
 ---
 layout: java-solid-post
-title: "리스코프 치환 원칙(Liskov Substitution Principle)"
+title: "리스코프 치환 원칙(Liskov Substitution Principle)[1]"
 date: 2019-05-06
 excerpt: ""
 tags: [java,solid,lsp]
@@ -8,7 +8,7 @@ java-solid: true
 comments: true
 ---
 
-컴퓨터 프로그램에서 S가 T의 하위 유형이면 T 유형의 객체는 S 유형의 객체로 대체 될 수 있습니다
+컴퓨터 프로그램에서 S가 T의 서브타입이면 T 유형의 객체는 S 유형의 객체로 대체 될 수 있습니다.
 (즉, S 유형의 객체는 T 유형의 객체를 대체 할 수 있음))
 
 
