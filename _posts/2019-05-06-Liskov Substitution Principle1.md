@@ -11,8 +11,7 @@ comments: true
 
 ## 리스코프 치환 원칙 이란 무엇입니까?
 
-Liskov Substitution Principle에 대한 자세한 내용을 제공하는 [이 보고서]
-(https://drive.google.com/file/d/0BwhCYaYDn8EgNzAzZjA5ZmItNjU3NS00MzQ5LTkwYjMtMDJhNDU5ZTM0MTlh/view)를 살펴보십시오.  
+Liskov Substitution Principle에 대한 자세한 내용을 제공하는 [이 보고서](https://drive.google.com/file/d/0BwhCYaYDn8EgNzAzZjA5ZmItNjU3NS00MzQ5LTkwYjMtMDJhNDU5ZTM0MTlh/view)를 살펴보십시오.  
 LSP에 따라 기본 클래스에 대한 참조를 사용하는 함수는 파생 클래스의 객체를 알지 못해도 사용할 수 있어야합니다.  
 **간단히 말해 파생 클래스는 기본 클래스로 대체 할 수 있어야합니다.**  
 LSP를 설명하기 위해 직사각형과 사각형의 예를 들어 봅시다.  
@@ -109,7 +108,7 @@ public class LSPDemo {
     * 2. 폭(Breadth)은 항상 메소드 setBreadth에 대한 입력으로 전달된 너비와 동일해야 합니다.  
     * 3. 면적은 항상 길이와 너비의 곱과 동일해야합니다.  
     *
-    * In case, we try to establish ISA relationship between Square and Rectangle such that we call "Square is a Rectangle", 
+    * In case, we try to establish ISA relationship between Square and Rectangle such that we call "Square is a Rectangle",
     * below code would start behaving unexpectedly if an instance of Square is passed
     * Assertion error will be thrown in case of check for area and check for breadth, although the program will terminate as
     * the assertion error is thrown due to failure of Area check.
