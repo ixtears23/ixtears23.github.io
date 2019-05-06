@@ -1,193 +1,152 @@
 ---
 layout: java-solid-post
-title: "개방 폐쇄 원칙(Open Closded principle)"
-date: 2019-03-18
+title: "리스코프 치환 원칙(Liskov Substitution Principle)"
+date: 2019-05-06
 excerpt: ""
-tags: [java,solid,ocp]
+tags: [java,solid,lsp]
 java-solid: true
 comments: true
 ---
 
+컴퓨터 프로그램에서 S가 T의 하위 유형이면 T 유형의 객체는 S 유형의 객체로 대체 될 수 있습니다 
+(즉, S 유형의 객체는 T 유형의 객체를 대체 할 수 있음))
 
-## 소프트웨어 개체 (클래스, 모듈, 함수 등)는 확장을 위해 열려 있어야하지만 수정을 위해 닫혀 있어야 합니다.
 
-이 원칙의 목표는 소스 코드를 수정하지 않고 모듈의 동작을 확장하는 것입니다.
-우리 제품 중 하나에 할인을 적용하는 시나리오를 상상해보십시오.
-할인 서비스는 지정된 할인을 적용하고 할인 된 가격을 돌려 줄 것입니다.
-현재 우리 시스템에는 모든 성인에게 적용되는 단 한 종류의 할인 혜택 만 있습니다.
+간단히 말해서, 객체 지향 프로그램의 어떤 클래스의 객체는 자식 클래스의 객체로 대체 될 수 있습니다.  
+
+
+### 상속(Inheritance), 다형성(Polymorphism), 서브타이핑(Subtyping)  
+
+
+- 상속 Inheritance  
+
+상속은 상당히 이해하기 쉬운 개념입니다.  
+
+객체 또는 클래스가 다른 객체 또는 클래스를 기반으로하는 경우입니다.  
+클래스가 다른 클래스에서 "상속"되면 상속 된 클래스 (하위 클래스 또는 하위 클래스라고도 함)에 
+수퍼 클래스 (상위 클래스)의 모든 특성이 포함되지만 새 속성이 추가될 수 있음을 의미합니다.  
+
+일반적인 예를 들어 설명해 보겠습니다.  
+클래스 Watch가있는 경우 해당 클래스를 상속받아 PocketWatch 클래스를 가져올 수 있습니다.  
+PocketWatch는 여전히 Watch이며, 몇 가지 추가 기능만 있습니다.  
+
+
+- 다형성 Polymorphism  
+
+객체는 특정 상황에서는 한 방향으로, 다른 상황에서는 다른 방향으로 동작 할 수 있습니다.  
+객체 지향 프로그래밍에서이를 상황에 따른 동작이라고합니다.  
+어머니는 자녀와 함께 산책을하거나 학교 학부모 모임에 참석할 때 어머니로 행동합니다.  
+그러나 그녀가 친구와 함께있을 때, 직장에서 또는 단순히 심부름을 할 때, 그녀는 여자로서 행동 할 것입니다. 
+(알다시피,이 차이는 그다지 엄격하지 않습니다.)  
+
+아래는 리스코프 치환 원칙 예제입니다.
 
 ~~~java
-package com.solid.ocp.sample01;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+class TrasportationDevice
+{
+   String name;
+   String getName() { ... }
+   void setName(String n) { ... }
 
-public class Discount {
+   double speed;
+   double getSpeed() { ... }
+   void setSpeed(double d) { ... }
+   
+   Engine engine;
+   Engine getEngine() { ... }
+   void setEngine(Engine e) { ... }
 
-	public BigDecimal apply(BigDecimal price) {
-		BigDecimal percent = new BigDecimal("0.10");
-		BigDecimal discount = price.multiply(percent);
-		return price.subtract(discount).setScale(2, RoundingMode.HALF_UP);
-	}
-
+   void startEngine() { ... }
 }
 ~~~
 
-그리고 할인 서비스는 주어진 가격에 이 할인을 적용해야합니다.
-
 ~~~java
-package com.solid.ocp.sample01;
-
-import java.math.BigDecimal;
-
-public class DiscountService {
-
-	public BigDecimal applyDiscounts(BigDecimal price, Discount discount) {
-		return discount.apply(price);
-	}
+class Car extends TransportationDevice
+{
+   @Override
+   void startEngine() { ... }
 }
 ~~~
 
-그러나 우리 회사는 연장자에게 할인 혜택을 주고자 하므로, 별도의 연장자 할인을 받습니다.  
+여기에는 문제가 없습니다.  
+자동차는 분명히 수송 장치이며, 여기서는 수퍼 클래스의 `startEngine()` 메서드를 재정의한다는 것을 알 수 있습니다.  
+
+
+다른 운송 수단을 추가합시다.  
 
 ~~~java
-package com.solid.ocp.sample01;
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
-public class SeniorDiscount {
-
-	public BigDecimal apply(BigDecimal price) {
-		BigDecimal percent = new BigDecimal("0.20");
-		BigDecimal discount = price.multiply(percent);
-		return price.subtract(discount).setScale(2, RoundingMode.HALF_UP);
-	}
+class Bicycle extends TransportationDevice
+{
+   @Override
+   void startEngine() /*problem!*/
 }
 ~~~
 
-이것은 서비스가 성인을위한 할인과 연장자를위한 할인 모두를 적용해야하기 때문에 할인 서비스에 대해 좀 더 복잡하게 만듭니다.
+모든 것이 계획대로 진행되고 있지 않습니다!  
+자전거는 운송 수단이지만 엔진이 없으므로 `startEngine()` 메소드를 구현할 수 없습니다.  
+
+이것들은 **Liskov Substitution Principle** 의 위반이 초래하는 종류의 문제 들이며, 
+대개 아무것도 하지 않거나 실행될 수 없는 방법으로 가장 일반적으로 인식 될 수 있습니다.  
+
+이러한 문제에 대한 **해결책** 은 **올바른 상속 계층 구조** 이며, 
+우리의 경우 엔진이 있거나 없는 운송 장치 클래스를 차별화하여 문제를 해결할 것입니다.  
+자전거는 운송 수단이지만 엔진이 없습니다.  
+이 예에서는 운송 수단에 대한 정의가 잘못되었습니다. 엔진이 없어야 합니다.
+
+다음과 같이 `TransportationDevice` 클래스를 리팩터링 할 수 있습니다.  
+
 ~~~java
-package com.solid.ocp.sample01;
-
-import java.math.BigDecimal;
-
-public class DiscountService {
-
-	public BigDecimal applyDiscounts(BigDecimal price, Discount discount) {
-
-		BigDecimal discountPrice = price.add(BigDecimal.ZERO);
-		discountPrice = discount.apply(discountPrice);
-
-		return discountPrice;
-	}
-
-	public BigDecimal applySeniorDiscount(BigDecimal price, SeniorDiscount discount) {
-		return discount.apply(price);
-	}
+class TrasportationDevice
+{
+   String name;
+   String getName() { ... }
+   void setName(String n) { ... }
+ 
+   double speed;
+   double getSpeed() { ... }
+   void setSpeed(double d) { ... }
 }
 ~~~
 
-그렇게함으로써 할인 서비스 소스 코드를 수정하여 서비스를 확장했습니다.
-또한 영업 부서가 제시 다른 할인에 제시한다면 할인 서비스는 추가 될 수 있습니다.
+이제 우리는 비 동력 장치 용 `TransportationDevice` 를 확장 할 수 있습니다.  
 
-
-개방/폐쇄 원칙을 따르기 위해 우리는 할인 인터페이스를 만들 것입니다.  
 ~~~java
-package com.solid.ocp.sample01;
-
-import java.math.BigDecimal;
-
-public interface Discount {
-
-	BigDecimal apply(BigDecimal price);
+class DevicesWithoutEngines extends TransportationDevice
+{  
+   void startMoving() { ... }
 }
 ~~~
 
-기본 할인은 AdultDiscount로 이름이 바뀌고 할인 인터페이스를 구현합니다.
+그리고 동력 장치 용 `TransportationDevice` 를 확장하십시오.  
+여기에 `Engine` 객체를 추가하는 것이 더 적절합니다.  
+
+
 ~~~java
-package com.solid.ocp.sample01;
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
-public class AdultDiscount implements Discount {
-
-	@Override
-	public BigDecimal apply(BigDecimal price) {
-
-		BigDecimal percent = new BigDecimal("0.10");
-		BigDecimal discount = price.multiply(percent);
-
-		return price.subtract(discount.setScale(2, RoundingMode.HALF_UP));
-	}
-
+class DevicesWithEngines extends TransportationDevice
+{  
+   Engine engine;
+   Engine getEngine() { ... }
+   void setEngine(Engine e) { ... }
+ 
+   void startEngine() { ... }
 }
 ~~~
 
-연장자 할인은 위한 SeniorDiscount클래스를 만들어서 Discount 인터페이스를 구현합니다.
+따라서 우리의 `Car` 클래스는 **Liskov Substitution Principle** 을 고수하면서 더욱 전문화 되었습니다.  
+
 ~~~java
-package com.solid.ocp.sample01;
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
-public class SeniorDiscount implements Discount {
-
-	@Override
-	public BigDecimal apply(BigDecimal price) {
-		BigDecimal percent = new BigDecimal("0.20");
-		BigDecimal discount = price.multiply(percent);
-		return price.subtract(discount.setScale(2, RoundingMode.HALF_UP));
-	}
+class Car extends DevicesWithEngines
+{
+   @Override
+   void startEngine() { ... }
 }
 ~~~
 
+또한 `Bicycle` 클래스는 **Liskov Substitution Principle**을 준수합니다.  
 
-마지막으로 Discount 인터페이스를 기반으로 할인을 적용하려면 DiscountService를 리팩토링해야합니다.  
-~~~java
-package com.solid.ocp.sample01;
 
-import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.List;
+### 결론
 
-public class DiscountService {
-
-	public BigDecimal applyDiscounts(BigDecimal price, Discount[] discounts) {
-
-		BigDecimal discountPrice = price.add(BigDecimal.ZERO);
-
-		List<Discount> discountSet = Arrays.asList(discounts);
-		discountSet.forEach(d -> d.apply(discountPrice));
-
-		return discountPrice;
-	}
-
-}
-~~~
-
-이렇게 하면 할인 서비스는 소스 코드를 변경하지 않고 다른 할인을 적용 할 수 있습니다.
-
-추후에 기본 할인 적용이라는 할인이 추가되었을 경우 아래와 같이 BasicDiscount 클래스를 추가하면 됩니다.  
-
-~~~java
-package com.solid.ocp.sample01;
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
-public class BasicDiscount implements Discount {
-
-	@Override
-	public BigDecimal apply(BigDecimal price) {
-		BigDecimal percent = new BigDecimal("0.01");
-		BigDecimal discount = price.multiply(percent);
-		return price.subtract(discount.setScale(2, RoundingMode.HALF_UP));
-	}
-}
-~~~
-
-### 개방폐쇄 원칙을 따름으로써 기존 소스코드를 수정하지 않고도 기능을 확장할 수 있습니다.
-
-[출처](https://egkatzioura.com/2018/02/23/solid-principles-open-closed-principle/)
+Java와 같은 객체 지향 언어는 매우 강력하며 개발자로서 엄청난 유연성을 제공합니다.  
+클래스를 확장하지만 'Is-A'테스트에 실패한 객체를 작성하는 경우 **Liskov Substitution Principle**을 **위반**할 가능성이 높습니다.
