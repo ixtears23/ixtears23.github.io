@@ -420,3 +420,6 @@ public class CustomDesirializeTest {
 ~~~javascript
 Movie(imdbId=tt0472043, director=null, actors=[ActorGson(imdbId=nm2199632, dateOfBirth=Tue Sep 21 00:00:00 KST 1982, filmography=[Apocalypto, Beatdown, Wind Walkers])])
 ~~~
+
+
+[출처:Baeldung](https://www.baeldung.com/jackson-vs-gson)  
