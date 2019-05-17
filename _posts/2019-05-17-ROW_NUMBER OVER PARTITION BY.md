@@ -40,8 +40,8 @@ SELECT 'C' AS CLASS, 10 AS SCORE FROM DUAL
 |A|	100	|1|
 |A|	80	|2|
 |A|	70	|3|
-|B|	90	|1|
 |A|	60	|4|
+|B|	90	|1|
 |B|	50	|2|
 |C|	60	|1|
 |C|	40	|2|
