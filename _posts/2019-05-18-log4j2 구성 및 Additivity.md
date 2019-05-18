@@ -244,22 +244,3 @@ additivity는 (appender 참조를 구성 할 필요가없는 첫 번째 이전 �
 11:19:13.493 [main] TRACE com.junseok.blog.Bar - Exit with(false)
 11:19:13.493 [main] ERROR com.junseok.blog.MyApp - Didn't do it.
 ~~~
-
-
-
-### log4j2 를 slf4j 에 바인딩 하기
-
-~~~xml
-<dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-slf4j18-impl</artifactId>
-    <version>2.11.2</version>
-    <scope>test</scope>
-</dependency>
-
-<dependency>
-  <groupId>org.slf4j</groupId>
-  <artifactId>slf4j-log4j12</artifactId>
-  <version>1.7.5</version>
-</dependency>
-~~~
