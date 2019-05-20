@@ -3,7 +3,7 @@ layout: java-logging-post
 title: "log4j2 slf4j binding"
 date: 2019-05-20
 excerpt: ""
-tags: [log,log4j2]
+tags: [log,log4j2,slf4j]
 java-logging: true
 comments: true
 ---
