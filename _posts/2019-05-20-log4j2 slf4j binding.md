@@ -9,6 +9,7 @@ comments: true
 ---
 
 log4j2 slf4j binding 을 사용하면 slf4j 로 코딩된 애플리케이션을 log4j2로 사용할 수 있습니다.  
+단지 `log4j-slf4j-impl-2.11.2.jar` 파일만 추가하면 됩니다.  
 
 **주의!!!**  
 slf4j 를 log4j2 로 바인딩 시 `slf4j-log4j12-1.8.0-beta4.jar` 로 착각하면 안됩니다.  
