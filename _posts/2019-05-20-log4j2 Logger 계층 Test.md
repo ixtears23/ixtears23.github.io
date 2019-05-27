@@ -165,20 +165,20 @@ RootConsole 21:48:41.878 [main] ERROR com.junseok.logging.OtherLogging - OtherLo
 RootConsole 21:48:41.878 [main] FATAL com.junseok.logging.OtherLogging - OtherLogging FATAL log
 ~~~
 
-log4j2.xml 에 Logger name에 속하지 않은 클래스의 경우는 Root Logger 가 찍힙니다.  
-com.junseok.blog 로거와 com.junseok.blog.MyAppSubOne 이 있는 경우 더 상세한 로거를 찾고 해당 로거에 속하지 않으면 부모 로거를 찾습니다.
-자식: com.junseok.blog.MyAppSubOne 부모: com.junseok.blog  
-한마디로 자식 로거에 속하지 않으면 부모 로거를 찾고 부모 로거 또한 없으면 Root Logger 를 사용합니다.  
+`log4j2.xml` 에 `Logger name`에 속하지 않은 클래스의 경우는 `Root Logger` 가 찍힙니다.  
+`com.junseok.blog` 로거와 `com.junseok.blog.MyAppSubOne` 이 있는 경우 더 상세한 로거를 찾고 해당 로거에 속하지 않으면 부모 로거를 찾습니다.  
+자식: `com.junseok.blog.MyAppSubOne` 부모: `com.junseok.blog`  
+한마디로 **자식 로거** 에 속하지 않으면 **부모 로거** 를 찾고 부모 로거 또한 없으면 **Root Logger** 를 사용합니다.  
 
 
 #### getLogger(...) 로거를 가져오는 방법.
 
- - 파라미터를 넘기지 않는 경우  
-호출 측의 클래스 명을 가지는 Logger를 돌려줍니다.  
- - Class 파라미터를 넘기는 경우  
-클래스의 완전 수식 명을 Logger 명의로서 사용해, Logger를 돌려줍니다.  
- - String 파라미터를 넘기는 경우  
-지정된 이름을 가지는 Logger를 돌려줍니다.  
+ - **파라미터를 넘기지 않는 경우**  
+**호출 측의 클래스 명을 가지는 Logger** 를 돌려줍니다.  
+ - **Class 파라미터** 를 넘기는 경우  
+**클래스의 완전 수식 명을 Logger 명의로서 사용** 해, Logger를 돌려줍니다.  
+ - **String 파라미터** 를 넘기는 경우  
+**지정된 이름을 가지는 Logger** 를 돌려줍니다.  
 
 #### Root Logger 를 얻는 방법
 ~~~java
