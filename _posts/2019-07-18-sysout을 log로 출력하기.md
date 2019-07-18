@@ -78,7 +78,7 @@ PrintStream에 의해 출력 된 모든 문자는 플랫폼의 기본 문자 인
 
 
 
-### Container 구동시 Listener를 이용해서 StdOutToLogger 클래스를 호출한다.
+### Container 구동시 Listener를 이용해서 StdPrintToLogger 클래스를 호출한다.
 ~~~java
 package com.test.listener;
 
