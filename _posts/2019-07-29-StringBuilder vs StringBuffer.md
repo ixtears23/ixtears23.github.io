@@ -16,12 +16,14 @@ comments: true
 `+` 연산을 통해서 `String` 문자열을 연결하게 되면
 기존 `String` 객체는 `Garbage Collector`에 의해 제거되며 새로운
 인스턴스를 생성하게 됩니다.  
+
 ~~~java
 String a = "a";
 String b = "b";
 
 String c = a + b;
 ~~~
+
 `a` 객체와 `b` 객체는 `Garbage Collector`에 의해 제거되며
 문자열 `ab`가 새로운 `c`객체 로 메모리에 올라갑니다.  
 
@@ -31,12 +33,14 @@ String c = a + b;
 이 클래스의 생성자 또는 `null` 인수를 건네 주면 `NullPointerException` 이 발생합니다.  
 
 new 연산자로 `String` 객체를 인스턴스화 시키게 되면 같은 문자열 이더라도
-다른 주소를 참조하게 됩니다.
+다른 주소를 참조하게 됩니다.  
+
 ~~~java
 String str = new String("str");
 ~~~
 
 하지만 문자열을 바로 선언한 경우는 `String`은 불변객체이기 때문에 이미 메모리에 올라가 있는 동일한 문자열의 주소를 참조하게 됩니다.  
+
 ~~~java
 String str = "str";
 ~~~
