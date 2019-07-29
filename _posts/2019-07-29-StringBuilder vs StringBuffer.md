@@ -2,7 +2,7 @@
 layout: java-basic-post
 title: "StringBuilder vs StringBuffer"
 date: 2019-07-29
-excerpt: "java date"
+excerpt: ""
 tags: [String,StringBuilder,StringBuffer]
 java-basic: true
 comments: true
