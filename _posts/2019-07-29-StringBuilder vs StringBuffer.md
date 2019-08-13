@@ -64,6 +64,3 @@ String str = "str";
 
 `StringBuiller` 인스턴스는 다중 Thread 환경에서 사용하기에는 안전하지 않습니다.  
 동기화가 필요한 경우에는 `StringBuffer`를 사용해야 합니다.  
-
-
-## 조금 더 상세하고 정확한 내용을 위해 수정이 필요함.  
