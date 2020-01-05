@@ -1,5 +1,5 @@
 ---
-layout: etc-post
+layout: post
 title: "intellij shortcuts"
 date: 2020-01-05
 tags: [intellij,shortcut]
