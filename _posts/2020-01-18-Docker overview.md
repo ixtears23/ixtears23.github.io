@@ -3,10 +3,12 @@ layout: docker-post
 title: "Docker overview"
 date: 2019-07-14
 tags: [docker]
-excerpt: "해당내용은 번역기 사용"
+excerpt: ""
 docker: true
 comments: true
 ---
+
+`번역기를 사용했습니다.`
 
 [get-started](https://docs.docker.com/get-started/)  
 
@@ -38,4 +40,12 @@ Docker는 컨테이너의 수명주기를 관리하기위한 툴링 및 플랫�
 - 가상 머신을 사용하는 경우보다 주어진 하드웨어 조합에서 더 많은 컨테이너를 실행  
 - 가상 머신 인 호스트 머신 내에서도 Docker 컨테이너를 실행 가능
 
-##
+## Docker Engine
+
+Docker Engine은 다음과 같은 주요 구성 요소가 포함 된 클라이언트-서버 응용 프로그램입니다.
+
+ - 데몬 프로세스 (dockerd 명령)라고하는 장기 실행 프로그램 유형의 서버입니다.
+ - 프로그램이 데몬과 통신하고 수행 할 작업을 지시하는 데 사용할 수있는 인터페이스를 지정하는 REST API.
+ - CLI (명령 줄 인터페이스) 클라이언트 (docker 명령)
+
+![docker](https://docs.docker.com/engine/images/engine-components-flow.png)
