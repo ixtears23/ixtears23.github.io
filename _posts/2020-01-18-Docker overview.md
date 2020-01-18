@@ -1,14 +1,14 @@
 ---
 layout: docker-post
 title: "Docker overview"
-date: 2019-07-14
+date: 2020-01-18
 tags: [docker]
 excerpt: ""
 docker: true
 comments: true
 ---
 
-`번역기를 사용했습니다.`
+`번역기사용`
 
 [get-started](https://docs.docker.com/get-started/)  
 
