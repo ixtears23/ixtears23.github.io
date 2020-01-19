@@ -10,7 +10,7 @@ comments: true
 
 `번역기사용`
 
-[get-started](https://docs.docker.com/get-started/)  
+[출처:get-started](https://docs.docker.com/get-started/)  
 
 # Docker overview
 
