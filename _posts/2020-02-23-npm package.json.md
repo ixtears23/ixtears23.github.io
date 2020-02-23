@@ -82,7 +82,19 @@ tarball 또는 git URL로 종속성을 식별 할 수도 있습니다.
 버전 범위 지정에 대한 자세한 내용은 [semver](https://docs.npmjs.com/misc/semver)를 참조하십시오.  
 
 - **version** `version`과 정확히 일치해야합니다.  
-- **>version** `version`보다 커야합니다. 
+- **>version** `version`보다 커야 합니다.  
+- **>=version** `version`보다 크거나 같아야 합니다.  
+- **<version** `version`보다 작아야 합니다.  
+- **<=version** `version`보다 작거나 같아야 합니다.  
+- **~version** “`version`과 거의 동일합니다.” [semver](https://docs.npmjs.com/misc/semver) 참조  
+- **^version** “`version`과 호환 가능” [semver](https://docs.npmjs.com/misc/semver) 참조  
+- **1.2.x** 1.2.0, 1.2.1 등. 1.3.0은 아닙니다.  
+- **http://...** 아래 '`URLs as Dependencies`'참조  
+- __*__ 모든 `version`과 일치  
+- __""__(빈 문자열만) __*__ 와 동일  
+
+
+
 
 ## devDependencies
 
