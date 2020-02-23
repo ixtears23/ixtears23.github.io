@@ -122,6 +122,36 @@ tarball 또는 git URL로 종속성을 식별 할 수도 있습니다.
 
 
 ## devDependencies
+프로그램에서 모듈을 다운로드하여 사용하려는 경우 사용중인 외부 테스트 또는 문서 프레임 워크를 다운로드하거나 빌드하지 않아도됩니다.  
+
+이 경우 이러한 추가 항목을 devDependencies 객체에 매핑하는 것이 가장 좋습니다.  
+
+이러한 것들은 패키지의 루트에서 `npm link` 또는 `npm install`을 수행 할 때 설치되며
+다른 npm 구성 매개 변수처럼 관리 할 수 ​​있습니다.  
+주제에 대한 자세한 내용은 [npm-config](https://docs.npmjs.com/misc/config)를 참조하십시오.  
+
+CoffeeScript 또는 다른 언어를 JavaScript로 컴파일하는 것과 같이 플랫폼별로 고유하지 않은 빌드 단계의 경우,
+**prepare** 스크립트를 사용하여 이를 수행하고 필요한 패키지를 devDependency로 만듭니다.  
+
+예:  
+
+~~~
+{ "name": "ethopia-waza",
+  "description": "a delightfully fruity coffee varietal",
+  "version": "1.2.3",
+  "devDependencies": {
+    "coffee-script": "~1.6.3"
+  },
+  "scripts": {
+    "prepare": "coffee -o lib/ -c src/waza.coffee"
+  },
+  "main": "lib/waza.js"
+}
+~~~
+
+**prepare** 스크립트는 게시하기 전에 실행되므로 사용자가 직접 컴파일하지 않고도 기능을 사용할 수 있습니다.
+ 개발 모드 (예 : 로컬에서 `npm install` 실행)에서는 이 스크립트도 실행되므로 쉽게 테스트 할 수 있습니다.  
+ 
 
 
 ## URLs as Dependencies
