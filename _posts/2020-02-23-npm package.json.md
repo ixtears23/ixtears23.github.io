@@ -73,6 +73,16 @@ publishConfig 사전을 사용하여 공개시 레지스트리 구성 매개 변
 재정의 할 수있는 구성 옵션 목록을 보려면 [npm-config](https://docs.npmjs.com/misc/config)를 참조하십시오.
 
 ## dependencies
+`Dependencies` 는 패키지 이름을 버전 범위에 매핑하는 간단한 개체에 지정됩니다.  
+버전 범위는 하나 이상의 공백으로 구분 된 설명자가있는 문자열입니다.  
+tarball 또는 git URL로 종속성을 식별 할 수도 있습니다.  
+`dependencies` Object에 `test harnesses` 또는 `transpilers`를 넣지 마십시오.  
+아래 devDependencies를 참조하십시오.  
+
+버전 범위 지정에 대한 자세한 내용은 [semver](https://docs.npmjs.com/misc/semver)를 참조하십시오.  
+
+- **version** `version`과 정확히 일치해야합니다.  
+- **>version** `version`보다 커야합니다. 
 
 ## devDependencies
 
