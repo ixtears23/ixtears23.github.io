@@ -151,7 +151,7 @@ CoffeeScript 또는 다른 언어를 JavaScript로 컴파일하는 것과 같이
 
 **prepare** 스크립트는 게시하기 전에 실행되므로 사용자가 직접 컴파일하지 않고도 기능을 사용할 수 있습니다.
  개발 모드 (예 : 로컬에서 `npm install` 실행)에서는 이 스크립트도 실행되므로 쉽게 테스트 할 수 있습니다.  
- 
+
 
 
 ## URLs as Dependencies
@@ -162,7 +162,7 @@ CoffeeScript 또는 다른 언어를 JavaScript로 컴파일하는 것과 같이
 
 Git URL은 다음과 같은 형식입니다.  
 
-~~~javascript
+~~~
 <protocol>://[<user>[:<password>]@]<hostname>[:<port>][:][/]<path>[#<commit-ish> | #semver:<semver>]
 ~~~
 
@@ -181,21 +181,3 @@ git+ssh://git@github.com:npm/cli#semver:^5.0
 git+https://isaacs@github.com/npm/cli.git
 git://github.com/npm/cli.git#v1.0.27
 ~~~
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--
