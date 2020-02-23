@@ -86,12 +86,19 @@ tarball 또는 git URL로 종속성을 식별 할 수도 있습니다.
 - **>=version** `version`보다 크거나 같아야 합니다.  
 - **<version** `version`보다 작아야 합니다.  
 - **<=version** `version`보다 작거나 같아야 합니다.  
-- **~version** “`version`과 거의 동일합니다.” [semver](https://docs.npmjs.com/misc/semver) 참조  
-- **^version** “`version`과 호환 가능” [semver](https://docs.npmjs.com/misc/semver) 참조  
+- **~version** `version`과 거의 동일합니다. [semver](https://docs.npmjs.com/misc/semver) 참조  
+- **^version** `version`과 호환 가능. [semver](https://docs.npmjs.com/misc/semver) 참조  
 - **1.2.x** 1.2.0, 1.2.1 등. 1.3.0은 아닙니다.  
-- **http://...** 아래 '`URLs as Dependencies`'참조  
+- **http://...** [URLs as Dependencies](https://docs.npmjs.com/files/package.json#urls-as-dependencies) 참조  
 - __*__ 모든 `version`과 일치  
-- __""__(빈 문자열만) __*__ 와 동일  
+- **""** (빈 문자열) __*__ 와 동일  
+- **version1 - version2** 왼쪽과 오른쪽은 동일 **>=version1 <=version2**  
+- **range1 || range2** range1 또는 range2가 충족되면 전달합니다.  
+- **git...** [Git URLs as Dependencies](https://docs.npmjs.com/files/package.json#git-urls-as-dependencies) 참조
+- **user/repo** [GitHub URL](https://docs.npmjs.com/files/package.json#github-urls) 참조  
+- **tag** 태그로 태그되고 게시 된 특정 버전. [npm-dist-tag](https://docs.npmjs.com/cli/dist-tag) 참조
+- **path/path/path** [Local Paths](https://docs.npmjs.com/files/package.json#local-paths) 참조  
+
 
 
 
