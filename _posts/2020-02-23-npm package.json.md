@@ -93,12 +93,30 @@ tarball 또는 git URL로 종속성을 식별 할 수도 있습니다.
 - __*__ 모든 `version`과 일치  
 - **""** (빈 문자열) __*__ 와 동일  
 - **version1 - version2** 왼쪽과 오른쪽은 동일 **>=version1 <=version2**  
-- **range1 || range2** range1 또는 range2가 충족되면 전달합니다.  
+- **range1||range2** range1 또는 range2가 충족되면 전달합니다.  
 - **git...** [Git URLs as Dependencies](https://docs.npmjs.com/files/package.json#git-urls-as-dependencies) 참조
 - **user/repo** [GitHub URL](https://docs.npmjs.com/files/package.json#github-urls) 참조  
 - **tag** 태그로 태그되고 게시 된 특정 버전. [npm-dist-tag](https://docs.npmjs.com/cli/dist-tag) 참조
 - **path/path/path** [Local Paths](https://docs.npmjs.com/files/package.json#local-paths) 참조  
 
+예를 들어 다음은 모두 유효합니다.  
+~~~javascript
+{ "dependencies" :
+  { "foo" : "1.0.0 - 2.9999.9999"
+  , "bar" : ">=1.0.2 <2.1.2"
+  , "baz" : ">1.0.2 <=2.3.4"
+  , "boo" : "2.0.1"
+  , "qux" : "<1.0.0 || >=2.3.1 <2.4.5 || >=2.5.2 <3.0.0"
+  , "asd" : "http://asdf.com/asdf.tar.gz"
+  , "til" : "~1.2"
+  , "elf" : "~1.2.3"
+  , "two" : "2.x"
+  , "thr" : "3.3.x"
+  , "lat" : "latest"
+  , "dyl" : "file:../dyl"
+  }
+}
+~~~
 
 
 
@@ -106,9 +124,33 @@ tarball 또는 git URL로 종속성을 식별 할 수도 있습니다.
 ## devDependencies
 
 
+## URLs as Dependencies
+버전 범위 대신 tarball URL을 지정할 수 있습니다.  
+이 tarball은 설치시 패키지에 로컬로 다운로드되어 설치됩니다.  
+
+## Git URLs as Dependencies
+
+Git URL은 다음과 같은 형식입니다.  
+
+~~~javascript
+<protocol>://[<user>[:<password>]@]<hostname>[:<port>][:][/]<path>[#<commit-ish> | #semver:<semver>]
+~~~
+
+**<protocol>** 은 **git**, **git+ssh**, **git+http**, **git+https** 또는 **git+** 파일 중 하나입니다.  
 
 
+`#<commit-ish>`가 제공되면 해당 커밋을 정확하게 복제하는 데 사용됩니다.  
+commit-ish의 형식이 `#semver:<semver>`이면 `<semver>`는 유효한 semver 범위 또는 정확한 버전 일 수 있으며
+npm은 원격 저장소에서 해당 범위와 일치하는 태그 또는 참조를 찾습니다.  
+레지스트리 의존성. `#<commit-ish>` 또는 `#semver:<semver>`를 지정하지 않으면 `master`가 사용됩니다.  
 
+예:  
+~~~
+git+ssh://git@github.com:npm/cli.git#v1.0.27
+git+ssh://git@github.com:npm/cli#semver:^5.0
+git+https://isaacs@github.com/npm/cli.git
+git://github.com/npm/cli.git#v1.0.27
+~~~
 
 
 
