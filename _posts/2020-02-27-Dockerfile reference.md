@@ -85,7 +85,7 @@ Docker 데몬은 보낸 컨텍스트를 자동으로 정리합니다.
 각 명령어는 독립적으로 실행되며 새 이미지가 만들어 지므로 `RUN cd /tmp`는 다음 명령어에 영향을 미치지 않습니다.  
 
 Docker는 가능할 때마다 중간 이미지 (캐시)를 재사용하여 `docker build` 프로세스를 크게 가속화 합니다.
-이는 콘솔 출력에서 `Using cache` 메시지로 표시됩니다.    
+이는 콘솔 출력에서 `Using cache` 메시지로 표시됩니다.  
 
 ~~~
 $ docker build -t svendowideit/ambassador .
@@ -114,9 +114,8 @@ Successfully built 7ea8aef582cc
 
 ......
 
-...
 
----
+
 
 
 
