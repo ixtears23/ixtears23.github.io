@@ -2,9 +2,9 @@
 layout: post
 title: "Docker development best practices"
 date: 2020-02-26
-tags: [Docker]
+tags: [docker]
 excerpt: ""
-etc: true
+docker: true
 comments: true
 ---
 
