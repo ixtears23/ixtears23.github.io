@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: docker-post
 title: "Docker network"
 date: 2020-03-04
 tags: [docker,network]

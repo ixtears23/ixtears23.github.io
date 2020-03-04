@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: docker-post
 title: "Docker development best practices"
 date: 2020-02-26
 tags: [docker]

@@ -1,10 +1,10 @@
 ---
-layout: post
+layout: intellij-post
 title: "intellij shortcuts"
 date: 2020-01-05
 tags: [intellij,shortcut]
 excerpt: ""
-etc: true
+intellij: true
 comments: true
 ---
 

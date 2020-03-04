@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: docker-post
 title: "Docker-compose의  up, run, start의 차이?"
 date: 2020-02-26
 tags: [docker]

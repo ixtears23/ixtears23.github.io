@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: docker-post
 title: "Docker jenkins update"
 date: 2020-02-27
 tags: [docker,jenkins]

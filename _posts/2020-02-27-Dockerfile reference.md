@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: docker-post
 title: "Dockerfile reference"
 date: 2020-02-27
 tags: [docker]
