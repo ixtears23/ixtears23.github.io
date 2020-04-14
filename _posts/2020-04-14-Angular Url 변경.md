@@ -42,8 +42,8 @@ comments: true
 
 Angular 에서 정적파일에 대한 요청은 Router를 사용
 
-~~~typestript
-Router - @angular/router // 
+~~~typescript
+Router - @angular/router
 
 router.navigate([‘/login’])
 ~~~
