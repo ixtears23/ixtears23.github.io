@@ -58,16 +58,16 @@ HttpClient.get<Emp>(url, body)
 HttpClient.post<Emp>(url, body)
 ~~~
 
-정적파일에 대한 요청은 어차피 origin 현재 브라우저가 가리키는 동일한 출처인 웹서버에 요청을 보내는 것이기 때문에  
+정적파일에 대한 요청은 현재 브라우저가 가리키는 동일한 출처인 웹서버에 요청을 보내는 것이기 때문에  
 아무런 문제가 발생하지 않는다.
 
-localhost:8080 에서 loclahost:8080 으로 요청  
+> localhost:8080 에서 loclahost:8080 으로 요청  
 
 하지만!!
 
 api 요청의 경우는  
 
-localhost:8080 에서 localhost:9100 으로 요청으로  
+> localhost:8080 에서 localhost:9100 으로 요청으로  
 
 동일한 출처가 아니기 때문에 **오류 발생!** (Cors)  
 
@@ -76,7 +76,7 @@ localhost:8080 에서 localhost:9100 으로 요청으로
 
 이 문제를 해결하기 위해서는
 
-APIGateway 에 Cors 설정을 해준다.  
+**APIGateway 에 Cors 설정**을 해준다.  
 
 우선 동작이 가능하도록만 설정.  
 
