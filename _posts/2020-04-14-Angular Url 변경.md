@@ -8,10 +8,6 @@ angular: true
 comments: true
 ---
 
-# Microservice에서 Agular Http Url 변경
-
-제목이 이상함..;;
-
 **전제 조건**
  - Microservices
  - Api Gateway - http://localhost:9100
