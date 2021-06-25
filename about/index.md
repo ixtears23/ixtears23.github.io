@@ -7,7 +7,7 @@ comments: false
 ---
 
 
-<center><a href="https://junseokoh.tistory.com/"><b>2020~ 티스토리 블로그</b></a></center>
+# [2020~ 티스토리 블로그](https://junseokoh.tistory.com/)
 
 ## 소개
 * 6년차 개발자 입니다.
