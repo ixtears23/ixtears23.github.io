@@ -8,6 +8,9 @@ comments: false
 
 <center><a href="https://ixtears23.github.io/"><b>개발자 블로그</b></a></center>
 
+
+[티스토리 블로그(2020~)https://junseokoh.tistory.com/](https://junseokoh.tistory.com/)
+
 ## 소개
 * 4년차 개발자 입니다.
 * front-end, back-end 가리지 않고 좋아 합니다.
